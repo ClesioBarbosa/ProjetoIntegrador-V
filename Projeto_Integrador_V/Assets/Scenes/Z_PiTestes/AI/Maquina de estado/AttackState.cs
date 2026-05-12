@@ -25,6 +25,7 @@ public class AttackState : FSMState
             player.GetComponent<Rigidbody>().AddForce(dirKnock * 25 * -1,ForceMode.Impulse);
             player.GetComponent<LabMove>().vivo=false;
             atacou=true;
+            Debug.Log("BATEU");
         }   
     }
 }

@@ -14,6 +14,7 @@ public class ChaseState : FSMState
     public override void Reason(GameObject player, GameObject npc, bool detectao)
     {
         if (!detectao){
+            Debug.Log("PERDEU PERSEGUE");
 
             npc.GetComponent<NPCController>().fsm.PerformTransition(FSMTransition.LostPlayer);
         }
@@ -28,5 +29,6 @@ public class ChaseState : FSMState
     {
         npc.transform.LookAt(player.transform);
         npc.GetComponent<NavMeshAgent>().destination = player.transform.position;
+        Debug.Log("PERSEGUE");
     }
 }

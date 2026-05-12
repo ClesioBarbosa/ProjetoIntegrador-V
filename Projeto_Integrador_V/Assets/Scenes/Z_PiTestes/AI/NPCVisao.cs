@@ -20,11 +20,12 @@ public class NPCVisao : MonoBehaviour
 
     void Update()
     {
-        playerDetectado = false;
-
         if (player == null) return;
 
-        Vector3 origem = transform.position;
+    Vector3 origem = transform.position;
+
+    // Variável auxiliar
+    bool encontrouPlayer = false;
 
         for (int i = 0; i < quantidadeRaios; i++)
         {
@@ -36,14 +37,37 @@ public class NPCVisao : MonoBehaviour
 
             if (Physics.Raycast(origem, direcao, out hit, raioDeVisao))
             {
+                // Debug visual opcional
+                Debug.DrawRay(origem, direcao * hit.distance, Color.green);
+
                 if (hit.transform == player)
                 {
-                    playerDetectado = true;
+                    encontrouPlayer = true;
+
+                    NPCController npc = GetComponent<NPCController>();
+
+if (encontrouPlayer)
+{
+    playerDetectado = true;
+    npc.tempoSemVerPlayer = 0f;
+}
+else
+{
+    npc.tempoSemVerPlayer += Time.deltaTime;
+
+    if (npc.tempoSemVerPlayer >= npc.tempoParaPerderPlayer)
+    {
+        playerDetectado = false;
+    }
+}
                     break;
                 }
+        
             }
         }
     }
+
+    
 
     void OnDrawGizmosSelected()
     {
@@ -61,4 +85,4 @@ public class NPCVisao : MonoBehaviour
             Gizmos.DrawRay(origem, direcao * raioDeVisao);
         }
     }
-}
+} 

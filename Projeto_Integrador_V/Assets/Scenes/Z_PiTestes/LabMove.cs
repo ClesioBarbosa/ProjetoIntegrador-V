@@ -8,9 +8,9 @@ public class LabMove : MonoBehaviour
 {
     [SerializeField] private float velocidade = 5f;
     [SerializeField] private float suavidade = 5f;
-    
+    //+publico -privado
     private Vector2 move;
-    float cimabaixo=0;
+    sbyte cimabaixo=0;
     [HideInInspector] public bool vivo=false;
 
     void Update()

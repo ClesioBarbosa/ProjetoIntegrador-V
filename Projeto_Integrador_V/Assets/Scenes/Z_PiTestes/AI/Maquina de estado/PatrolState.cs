@@ -31,6 +31,7 @@ public class PatrolState : FSMState
         {
             currentWaypoint = (currentWaypoint + 1) % waypoints.Length;
         }
+       // Debug.Log("PATRULHA");
         
     }
 }
