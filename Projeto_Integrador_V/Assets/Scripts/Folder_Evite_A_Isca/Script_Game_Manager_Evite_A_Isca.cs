@@ -9,10 +9,16 @@ public class Script_Game_Manager_Evite_A_Isca : MonoBehaviour
     string Right_Word, 
         Right_Domain;
 
-    public GameObject Door_Prefab;
+    public GameObject Door_Prefab, 
+    Door_Mold2, 
+    Door_Mold3, 
+    Door_Mold4, 
+    Door_Mold5;
 
-    //Os nomes dos sites são sobrenomes de amigos do meu primeiro semestre, parceiros de equipe de projetos integradores, professores de oficina e orientadores das minhas equipes
-    //Quem achar ruim é bobo
+    GameObject Door_Molds;
+
+    //Os nomes dos sites sï¿½o sobrenomes de amigos do meu primeiro semestre, parceiros de equipe de projetos integradores, professores de oficina e orientadores das minhas equipes
+    //Quem achar ruim ï¿½ bobo
     List<string> Possible_Names = new List<string> { "Pereira", "Rozendo", "Nascimento", "Campos", "Rangel", "Santos", "Ferreira", "Lima", "Caridade", "Barreto", 
         "Oliveira", "Mota", "Mafra", "Jacinto", "Silva", "Lopes", "Desiderio", "Brito", "Braga", "Cerqueira", 
         "Sanches", "Barbosa", "Pacheco", "Freire", "Cruz", "Carmo", "Souto", "Cunha", "Andrade", 
@@ -250,6 +256,14 @@ public class Script_Game_Manager_Evite_A_Isca : MonoBehaviour
         float total_Width = (Door_Amount - 1) * Spacing;
         float start_X = -total_Width / 2;
 
+        switch (Door_Amount)
+        {
+            case 2: Door_Molds = Instantiate(Door_Mold2);    break;
+            case 3: Door_Molds = Instantiate(Door_Mold3);    break;
+            case 4: Door_Molds = Instantiate(Door_Mold4);    break;
+            case 5: Door_Molds = Instantiate(Door_Mold5);    break;
+        }
+
         for(int i = 0; i < Door_Amount; i++)
         {
             Vector3 Door_Position = new Vector3(start_X + i * Spacing,
@@ -297,6 +311,11 @@ public class Script_Game_Manager_Evite_A_Isca : MonoBehaviour
             Destroy(door);
         }
 
+        if(Door_Molds != null)
+        {
+            Destroy(Door_Molds);
+        }
+
         Doors_List.Clear();
         Current_Timer = Max_Timer;
 
@@ -337,7 +356,7 @@ public class Script_Game_Manager_Evite_A_Isca : MonoBehaviour
                 if(Getting_Touch.phase == TouchPhase.Began)
                 {
 
-                    //Eu não pensei em nomes condinzentes para por nessas variaveis...
+                    //Eu nï¿½o pensei em nomes condinzentes para por nessas variaveis...
                     Ray r = Camera.main.ScreenPointToRay(Getting_Touch.position);
                     RaycastHit hit;
 
@@ -433,7 +452,7 @@ public class Script_Game_Manager_Evite_A_Isca : MonoBehaviour
 
         string Becoming_Harder = (Possible_Progressions[Random.Range(0, Possible_Progressions.Count)]);
 
-        //Quero fazer um indicador visual do que está ficando mais dificil
+        //Quero fazer um indicador visual do que estï¿½ ficando mais dificil
         print($"Aumentar dificuldade: {Becoming_Harder}");
 
         switch (Becoming_Harder)
@@ -464,7 +483,7 @@ public class Script_Game_Manager_Evite_A_Isca : MonoBehaviour
     {
         Max_Timer -= 5f;
 
-        print($"Tempo máximo: {Max_Timer}");
+        print($"Tempo mï¿½ximo: {Max_Timer}");
 
         if (Max_Timer == 5f)
         {
@@ -478,7 +497,7 @@ public class Script_Game_Manager_Evite_A_Isca : MonoBehaviour
     {
         Deception_Level++;
 
-        print($"Nível de Enganação: {Deception_Level}");
+        print($"Nï¿½vel de Enganaï¿½ï¿½o: {Deception_Level}");
 
         if (Deception_Level == 3)
         {
