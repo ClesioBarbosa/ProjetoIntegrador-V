@@ -21,11 +21,9 @@ public class NPCVisao : MonoBehaviour
     void Update()
     {
         if (player == null) return;
+        bool achou=false;
 
-    Vector3 origem = transform.position;
-
-    // Variável auxiliar
-    bool encontrouPlayer = false;
+        Vector3 origem = transform.position;
 
         for (int i = 0; i < quantidadeRaios; i++)
         {
@@ -35,39 +33,40 @@ public class NPCVisao : MonoBehaviour
 
             RaycastHit hit;
 
-            if (Physics.Raycast(origem, direcao, out hit, raioDeVisao))
+            if (Physics.Raycast(origem, direcao, out hit, raioDeVisao, -mascaraObstaculos))
             {
-                // Debug visual opcional
-                Debug.DrawRay(origem, direcao * hit.distance, Color.green);
-
                 if (hit.transform == player)
                 {
-                    encontrouPlayer = true;
-
-                    NPCController npc = GetComponent<NPCController>();
-
-if (encontrouPlayer)
-{
-    playerDetectado = true;
-    npc.tempoSemVerPlayer = 0f;
-}
-else
-{
-    npc.tempoSemVerPlayer += Time.deltaTime;
-
-    if (npc.tempoSemVerPlayer >= npc.tempoParaPerderPlayer)
-    {
-        playerDetectado = false;
-    }
-}
+                    achou=true;
+                    Debug.Log("ACHOU");
                     break;
                 }
-        
+            }
+        }
+
+        NPCController npc = GetComponent<NPCController>();
+
+        if(achou)
+        {
+            playerDetectado=true;
+            npc.tempoParaPerderPlayer=0f;
+        }
+        else
+        {
+            npc.tempoSemVerPlayer += Time.deltaTime;
+
+            if(npc.tempoSemVerPlayer >= npc.tempoParaPerderPlayer)
+            {
+                playerDetectado=false;
             }
         }
     }
 
-    
+    IEnumerator EsperarDetectao(float time)
+    {
+        yield return new WaitForSeconds(time);
+        
+    }
 
     void OnDrawGizmosSelected()
     {
@@ -85,4 +84,4 @@ else
             Gizmos.DrawRay(origem, direcao * raioDeVisao);
         }
     }
-} 
+}

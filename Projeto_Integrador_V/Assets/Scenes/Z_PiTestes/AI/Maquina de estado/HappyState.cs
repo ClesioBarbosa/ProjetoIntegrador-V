@@ -14,6 +14,6 @@ public class HappyState : FSMState
 
     public override void Act(GameObject player, GameObject npc, bool detectao)
     {
-       SceneManager.LoadScene("MenuMiniGames");
+       //SceneManager.LoadScene("MenuMiniGames");
     }
 }

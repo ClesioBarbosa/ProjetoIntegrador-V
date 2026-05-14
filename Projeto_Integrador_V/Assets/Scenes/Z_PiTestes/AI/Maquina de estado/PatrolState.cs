@@ -18,9 +18,7 @@ public class PatrolState : FSMState
 
     public override void Reason(GameObject player, GameObject npc, bool detectao)
     {
-        if (detectao){
-            npc.GetComponent<NPCController>().fsm.PerformTransition(FSMTransition.SawPlayer);
-        }
+        if (detectao) npc.GetComponent<NPCController>().fsm.PerformTransition(FSMTransition.SawPlayer);
     }
 
     public override void Act(GameObject player, GameObject npc, bool detectao)

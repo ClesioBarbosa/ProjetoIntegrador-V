@@ -54,7 +54,7 @@ public class LabMove : MonoBehaviour
     {
         if(col.gameObject.layer==4)
         {
-            SceneManager.LoadScene("MenuMiniGames");
+            //SceneManager.LoadScene("MenuMiniGames");
         }
     }
 }
