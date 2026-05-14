@@ -67,11 +67,14 @@ public class Script_Game_Manager_Evite_A_Isca : MonoBehaviour
     int Deception_Level, 
         Door_Amount;
 
-    float Spacing = 3f;
+    float Spacing = 3f, 
+    Weed_Height;
 
     public Script_Camera_Logic cam;
 
     public Script_Camera_Fade Fade;
+
+    AlgaeWave[] algaeScripts;
 
     void Start()
     {
@@ -264,6 +267,14 @@ public class Script_Game_Manager_Evite_A_Isca : MonoBehaviour
             case 5: Door_Molds = Instantiate(Door_Mold5);    break;
         }
 
+        algaeScripts = Door_Molds.GetComponentsInChildren<AlgaeWave>();
+
+
+        foreach (AlgaeWave algae in algaeScripts)
+        {
+            algae.height = Random.Range(0.5f, 1.5f);
+        }
+
         for(int i = 0; i < Door_Amount; i++)
         {
             Vector3 Door_Position = new Vector3(start_X + i * Spacing,
@@ -315,6 +326,8 @@ public class Script_Game_Manager_Evite_A_Isca : MonoBehaviour
         {
             Destroy(Door_Molds);
         }
+
+        algaeScripts = null;
 
         Doors_List.Clear();
         Current_Timer = Max_Timer;

@@ -5,7 +5,7 @@ using UnityEngine;
 public class AlgaeWave : MonoBehaviour
 {
     public int segments = 6;//define a quantidade de nós que a linha tem
-    public float height = 3f;
+    public float height;
 
     public float waveAmplitude = 0.3f; // até onde vai
     public float waveFrequency = 2f; // quão drastico ou não pode ser o movimento
