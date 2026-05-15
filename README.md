@@ -1,5 +1,5 @@
 # Proteja-se na Net!
-projeto integrador do quinto semestre IFBA
+projeto integrador do quinto semestre de tecnologia em jogos digitais-IFBA
 
 Andrey Pereira Rozendo (Geladeyra)  
 Clésio Barbosa Oliveira (ClesioBarbosa)  
