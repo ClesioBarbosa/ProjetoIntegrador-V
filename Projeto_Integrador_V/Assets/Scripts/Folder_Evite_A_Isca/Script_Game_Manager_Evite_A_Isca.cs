@@ -3,6 +3,7 @@ using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Script_Game_Manager_Evite_A_Isca : MonoBehaviour
 {
@@ -400,6 +401,8 @@ public class Script_Game_Manager_Evite_A_Isca : MonoBehaviour
         Is_On_Round = false;
 
         Fade.Fade_Out = true;
+
+        SceneManager.LoadScene("MenuMiniGames");
     }
 
     void Hiding_Screen()

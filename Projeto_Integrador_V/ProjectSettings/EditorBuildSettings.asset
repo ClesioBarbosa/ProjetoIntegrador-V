@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Menus/MenuPrincipal.unity
+    guid: 29f600959d9492042a621375deec6089
+  - enabled: 1
     path: Assets/Scenes/Minigame_Scenes/Evite_a_Isca/Evite_a_Isca_Tutorial_Scene.unity
     guid: 1a31ee05df9ef1448967a02a9e6251ba
   - enabled: 1
@@ -19,6 +22,15 @@ EditorBuildSettings:
     path: Assets/Scenes/Minigame_Scenes/Labirinto_da_Fraude/Labirinto_da_Fraude_Tutorial_Scene
       1.unity
     guid: c68fd67d5d74ca84980eeb8e6a10724b
+  - enabled: 1
+    path: Assets/Scenes/Z_PiTestes/LabCenaTeste.unity
+    guid: bd3d65c560d51b6418affc33b62f238e
+  - enabled: 1
+    path: Assets/Scenes/Menus/MenuCreditos.unity
+    guid: e59652e2484f327439ec7b5b0982a2ea
+  - enabled: 1
+    path: Assets/Scenes/Menus/MenuMiniGames.unity
+    guid: 25886177d2b376242bd5523f2f0e2684
   m_configObjects:
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000,
       guid: 40eb02532401ad545a89b53cd6f2a832, type: 2}

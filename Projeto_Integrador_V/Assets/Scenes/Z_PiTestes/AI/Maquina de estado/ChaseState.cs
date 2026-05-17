@@ -6,6 +6,8 @@ using UnityEngine.AI;
 
 public class ChaseState : FSMState
 {
+    private float tempoSemVer=0f;
+    private float tempoMaxSemVer= 1.5f;
     public ChaseState()
     {
         stateID = FSMStateID.Chase;
@@ -13,14 +15,22 @@ public class ChaseState : FSMState
 
     public override void Reason(GameObject player, GameObject npc, bool detectao)
     {
-        if (!detectao){
-
-            npc.GetComponent<NPCController>().fsm.PerformTransition(FSMTransition.LostPlayer);
-        }
         
-        if(detectao && npc.GetComponent<NPCController>().coli==true)
+        if(detectao)
         {
-            npc.GetComponent<NPCController>().fsm.PerformTransition(FSMTransition.CloseCombat);
+            tempoSemVer=0f;
+            if(npc.GetComponent<NPCController>().coli==true) npc.GetComponent<NPCController>().fsm.PerformTransition(FSMTransition.CloseCombat);
+        }
+        else
+        {
+            tempoSemVer += Time.deltaTime;
+
+            if(tempoSemVer >= tempoMaxSemVer)
+            {
+                Debug.Log("PERDEU JOGADOR");
+                tempoSemVer=0f;
+                npc.GetComponent<NPCController>().fsm.PerformTransition(FSMTransition.LostPlayer);
+            }
         }
     }
 
@@ -28,5 +38,6 @@ public class ChaseState : FSMState
     {
         npc.transform.LookAt(player.transform);
         npc.GetComponent<NavMeshAgent>().destination = player.transform.position;
+        Debug.Log("PERSEGUE");
     }
 }

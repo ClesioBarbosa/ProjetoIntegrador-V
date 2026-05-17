@@ -2,14 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class LabMove : MonoBehaviour
 {
     [SerializeField] private float velocidade = 5f;
     [SerializeField] private float suavidade = 5f;
-    
+    //+publico -privado
     private Vector2 move;
-    float cimabaixo=0;
+    sbyte cimabaixo=0;
     [HideInInspector] public bool vivo=false;
 
     void Update()
@@ -46,6 +47,14 @@ public class LabMove : MonoBehaviour
                 cimabaixo=0;
                 break;
             } 
+        }
+    }
+
+    void OnTriggerEnter(Collider col)
+    {
+        if(col.gameObject.layer==4)
+        {
+            //SceneManager.LoadScene("MenuMiniGames");
         }
     }
 }

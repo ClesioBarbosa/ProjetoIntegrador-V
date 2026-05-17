@@ -8,6 +8,8 @@ public class NPCController : MonoBehaviour
     [SerializeField] Transform [] patrolPoints;
     [SerializeField] GameObject jogador;
     [HideInInspector] public bool coli;
+    [HideInInspector] public float tempoSemVerPlayer = 0f;
+    public float tempoParaPerderPlayer = 1.5f;
     
     private void Start()
     {

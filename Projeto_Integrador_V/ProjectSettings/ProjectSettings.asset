@@ -163,6 +163,7 @@ PlayerSettings:
   androidSupportedAspectRatio: 1
   androidMaxAspectRatio: 2.1
   applicationIdentifier:
+    Android: com.AndreyBrunoClecioJoao.ProtejasenaNet
     Standalone: com.AndreyBrunoClecioJoao.Proteja-se-na-Net-
   buildNumber:
     Standalone: 0

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HappyState : FSMState
 {
@@ -13,6 +14,6 @@ public class HappyState : FSMState
 
     public override void Act(GameObject player, GameObject npc, bool detectao)
     {
-       
+       //SceneManager.LoadScene("MenuMiniGames");
     }
 }

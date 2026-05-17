@@ -1757,6 +1757,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5182190560554889275, guid: b724febefeaed0c46a699d7b986ac515,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7014598427143253835, guid: b724febefeaed0c46a699d7b986ac515,
         type: 3}
       propertyPath: m_ScaleFactor

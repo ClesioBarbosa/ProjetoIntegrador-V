@@ -20,9 +20,8 @@ public class NPCVisao : MonoBehaviour
 
     void Update()
     {
-        playerDetectado = false;
-
         if (player == null) return;
+        bool achou=false;
 
         Vector3 origem = transform.position;
 
@@ -34,15 +33,39 @@ public class NPCVisao : MonoBehaviour
 
             RaycastHit hit;
 
-            if (Physics.Raycast(origem, direcao, out hit, raioDeVisao))
+            if (Physics.Raycast(origem, direcao, out hit, raioDeVisao, -mascaraObstaculos))
             {
                 if (hit.transform == player)
                 {
-                    playerDetectado = true;
+                    achou=true;
+                    Debug.Log("ACHOU");
                     break;
                 }
             }
         }
+
+        NPCController npc = GetComponent<NPCController>();
+
+        if(achou)
+        {
+            playerDetectado=true;
+            npc.tempoParaPerderPlayer=0f;
+        }
+        else
+        {
+            npc.tempoSemVerPlayer += Time.deltaTime;
+
+            if(npc.tempoSemVerPlayer >= npc.tempoParaPerderPlayer)
+            {
+                playerDetectado=false;
+            }
+        }
+    }
+
+    IEnumerator EsperarDetectao(float time)
+    {
+        yield return new WaitForSeconds(time);
+        
     }
 
     void OnDrawGizmosSelected()
