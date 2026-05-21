@@ -1558,6 +1558,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Door_Prefab: {fileID: 455247722158046030, guid: 782bc07281d57f84e9ab65cee66c0153,
     type: 3}
+  Actual_Door_Mold: {fileID: 0}
   Player_Score: 0
   Player_Highscore: 0
   Right_Word_Text: {fileID: 419442046}
@@ -1568,6 +1569,14 @@ MonoBehaviour:
   FadeOut: 0
   cam: {fileID: 654241965}
   Fade: {fileID: 215333108}
+  Door_Mold2: {fileID: 8740698174983548891, guid: 1dc4f6f0635811b4b80bb0322fedb935,
+    type: 3}
+  Door_Mold3: {fileID: 2457551138261170582, guid: bec3cd3181ffc5948a8edc935e81c495,
+    type: 3}
+  Door_Mold4: {fileID: 6430478485046671831, guid: 60715cd403d193246bda301e6b18beaa,
+    type: 3}
+  Door_Mold5: {fileID: 3208311211507638255, guid: aabdcc0a6b18eeb4d9d069787e5547f6,
+    type: 3}
 --- !u!65 &1748110976
 BoxCollider:
   m_ObjectHideFlags: 0

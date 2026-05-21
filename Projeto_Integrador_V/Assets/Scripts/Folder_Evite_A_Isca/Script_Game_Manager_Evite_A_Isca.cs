@@ -10,7 +10,8 @@ public class Script_Game_Manager_Evite_A_Isca : MonoBehaviour
     string Right_Word, 
         Right_Domain;
 
-    public GameObject Door_Prefab;
+    public GameObject Door_Prefab, 
+        Actual_Door_Mold;
 
     //Os nomes dos sites s�o sobrenomes de amigos do meu primeiro semestre, parceiros de equipe de projetos integradores, professores de oficina e orientadores das minhas equipes
     //Quem achar ruim � bobo
@@ -67,6 +68,11 @@ public class Script_Game_Manager_Evite_A_Isca : MonoBehaviour
     public Script_Camera_Logic cam;
 
     public Script_Camera_Fade Fade;
+
+    public GameObject Door_Mold2,
+        Door_Mold3,
+        Door_Mold4,
+        Door_Mold5;
 
     void Start()
     {
@@ -285,6 +291,16 @@ public class Script_Game_Manager_Evite_A_Isca : MonoBehaviour
             Door_Text.text = textToUse;
 
         }
+
+        switch (Door_Amount)
+        {
+            case 2: Actual_Door_Mold = Instantiate(Door_Mold2); break;
+            case 3: Actual_Door_Mold = Instantiate(Door_Mold3); break;
+            case 4: Actual_Door_Mold = Instantiate(Door_Mold4); break;
+            case 5: Actual_Door_Mold = Instantiate(Door_Mold5); break;
+        }
+
+        Actual_Door_Mold.transform.position = new Vector3(0, 1.72f, 0);
     }
 
     void Start_New_Round()
@@ -296,6 +312,11 @@ public class Script_Game_Manager_Evite_A_Isca : MonoBehaviour
         foreach (GameObject door in Doors_List)
         {
             Destroy(door);
+        }
+
+        if(Actual_Door_Mold != null)
+        {
+            Destroy(Actual_Door_Mold);
         }
 
         Doors_List.Clear();
