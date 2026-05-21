@@ -7,10 +7,26 @@ using UnityEngine.SceneManagement;
 
 public class Lab_GameManager : MonoBehaviour
 {
-    [SerializeField] TMP_Text timeTxt;
-    [SerializeField] float timeL = 60f;
+    [Header("Configuração timer")]
+    [SerializeField] private TMP_Text timeTxt;
+    [SerializeField] private float timeL = 60f;
+    [SerializeField] private Image anunciosSprite;
+
+    [Header("Configuração anúncios certos")]
+    [SerializeField] private GameObject [] anuncionsEsquerdaObj;
+    [SerializeField] private GameObject [] anuncionsDireitaObj;
+    [SerializeField] private Image [] anunciosSpritesCertos;
+    [Header("Configuração anúncios errados")]
+    [SerializeField] private GameObject anuncionsEsquerdaErroObj;
+    [SerializeField] private GameObject anuncionsDireitaErroObj;
+    [SerializeField] private Image [] anunciosSpritesErro;
+
+    private int EsquerdaDireita=-1;
     void Start()
     {
+        //Esquerda 0, Direita 1
+        EsquerdaDireita = Random.Range(0,2);
+
         
     }
 
