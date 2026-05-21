@@ -45,8 +45,7 @@ public class Script_Game_Manager_Evite_A_Isca : MonoBehaviour
     public int Player_Score, 
         Player_Highscore;
 
-    [SerializeField] public TextMeshProUGUI Right_Word_Text, 
-        Timer_Display, 
+    [SerializeField] public TextMeshProUGUI Timer_Display, 
         Score_Display;
 
     public Image Black_Fades;
@@ -74,10 +73,12 @@ public class Script_Game_Manager_Evite_A_Isca : MonoBehaviour
         Door_Mold4,
         Door_Mold5;
 
+    public TextMeshPro Right_Name_Display;
+
     void Start()
     {
         Player_Score = 0; 
-        Door_Amount = 2; 
+        Door_Amount = 5; 
         Deception_Level = 1;
         Max_Timer = 30f;
 
@@ -115,7 +116,7 @@ public class Script_Game_Manager_Evite_A_Isca : MonoBehaviour
         Right_Word = (Possible_Names[Random.Range(0, Possible_Names.Count)]);
         Right_Domain = (Possible_Domains[Random.Range(0, Possible_Domains.Count)]);
 
-        Right_Word_Text.text = (Right_Word + Right_Domain);
+        
 
         List<string> s = Generate_All_Words();
         Spawn_Doors(s);
@@ -301,6 +302,12 @@ public class Script_Game_Manager_Evite_A_Isca : MonoBehaviour
         }
 
         Actual_Door_Mold.transform.position = new Vector3(0, 1.72f, 0);
+
+        
+
+        Right_Name_Display = Actual_Door_Mold.GetComponentInChildren<TextMeshPro>();
+
+        Right_Name_Display.text = (Right_Word + Right_Domain).ToString();
     }
 
     void Start_New_Round()
