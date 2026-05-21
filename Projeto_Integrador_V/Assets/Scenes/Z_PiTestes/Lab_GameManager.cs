@@ -53,12 +53,27 @@ public class Lab_GameManager : MonoBehaviour
     {
         if(EsquerdaDireita==0) //Esquerda lado certo
         {
-            anunciosSprite.sprite=anunciosSpritesCertos[Random.Range(0,4)];
+            anunciosSprite.sprite=anunciosSpritesCertos[Random.Range(0,anunciosSpritesCertos.Length)];
             anunciosSprite.enabled=true;
         }
         if(EsquerdaDireita==1) //Esquerda lado errado
         {
-            
+            anunciosSprite.sprite=anunciosSpritesErro[Random.Range(0,anunciosSpritesErro.Length)];
+            anunciosSprite.enabled=true;
+        }
+    }
+
+    public void LadosAnunciosDireita()
+    {
+        if(EsquerdaDireita==0) //Direita lado errado
+        {
+            anunciosSprite.sprite=anunciosSpritesErro[Random.Range(0,anunciosSpritesErro.Length)];
+            anunciosSprite.enabled=true;
+        }
+        if(EsquerdaDireita==1) //Direita lado certo
+        {
+            anunciosSprite.sprite=anunciosSpritesCertos[Random.Range(0,anunciosSpritesCertos.Length)];
+            anunciosSprite.enabled=true;
         }
     }
 

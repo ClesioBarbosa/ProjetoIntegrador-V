@@ -8,6 +8,7 @@ public class LabMove : MonoBehaviour
 {
     [SerializeField] private float velocidade = 5f;
     [SerializeField] private float suavidade = 5f;
+    [SerializeField] private Lab_GameManager lab_Game;
     //+publico -privado
     private Vector2 move;
     sbyte cimabaixo=0;
@@ -58,11 +59,11 @@ public class LabMove : MonoBehaviour
         }
         if(col.gameObject.layer==8) //Anuncios Esquerda
         {
-            
+            lab_Game.LadosAnunciosEsquerda();
         }
         if(col.gameObject.layer==9) //Anuncios Direita
         {
-            
+            lab_Game.LadosAnunciosDireita();
         }
     }
 }
