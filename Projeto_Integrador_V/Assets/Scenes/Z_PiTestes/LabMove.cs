@@ -52,9 +52,17 @@ public class LabMove : MonoBehaviour
 
     void OnTriggerEnter(Collider col)
     {
-        if(col.gameObject.layer==4)
+        if(col.gameObject.layer==4) //Saida
         {
             //SceneManager.LoadScene("MenuMiniGames");
+        }
+        if(col.gameObject.layer==8) //Anuncios Esquerda
+        {
+            
+        }
+        if(col.gameObject.layer==9) //Anuncios Direita
+        {
+            
         }
     }
 }
