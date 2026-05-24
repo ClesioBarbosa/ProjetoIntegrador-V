@@ -1687,6 +1687,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Dolly Track
       objectReference: {fileID: 0}
+    - target: {fileID: 2075868427747326851, guid: 9995b163a053c7e438c7bd91e6068283,
+        type: 3}
+      propertyPath: m_Waypoints.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2075868427747326851, guid: 9995b163a053c7e438c7bd91e6068283,
+        type: 3}
+      propertyPath: m_Waypoints.Array.data[1].position.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 2075868427747326851, guid: 9995b163a053c7e438c7bd91e6068283,
+        type: 3}
+      propertyPath: m_Waypoints.Array.data[1].position.y
+      value: 0.5800004
+      objectReference: {fileID: 0}
     - target: {fileID: 7490658420978560184, guid: 9995b163a053c7e438c7bd91e6068283,
         type: 3}
       propertyPath: m_LocalPosition.x
