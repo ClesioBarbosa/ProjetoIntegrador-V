@@ -6,6 +6,7 @@ public class AlgaeWave : MonoBehaviour
 {
     public int segments = 6;//define a quantidade de nós que a linha tem
     public float height = 3f;
+    private float baseHeight;
 
     public float waveAmplitude = 0.3f; // até onde vai
     public float waveFrequency = 2f; // quão drastico ou não pode ser o movimento
@@ -13,21 +14,26 @@ public class AlgaeWave : MonoBehaviour
 
     private LineRenderer line;
     private float randomOffset;
+    public Vector3 localOffset;
 
-    void Start()
+    void Awake()
     {
-        line = GetComponent<LineRenderer>();
-        line.positionCount = segments;
+    line = GetComponent<LineRenderer>();
 
-        randomOffset = Random.Range(0f, 100f);
+    line.positionCount = segments;
+    line.useWorldSpace = false;
 
-        // variação entre algas
-        waveSpeed *= Random.Range(0.8f, 1.2f);
-        waveAmplitude *= Random.Range(0.8f, 1.3f);
-        height *= Random.Range(0.8f, 1.5f);
+    randomOffset = Random.Range(0f, 100f);
+
+    baseHeight = height;
+
+    waveSpeed *= Random.Range(0.8f, 1.2f);
+    waveAmplitude *= Random.Range(0.8f, 1.3f);
+
+    height = baseHeight * Random.Range(0.8f, 1.5f);
     }
 
-    void Update()
+    void LateUpdate()
     {
         for (int i = 0; i < segments; i++)
         {
@@ -46,7 +52,7 @@ public class AlgaeWave : MonoBehaviour
             // leve inclinação natural
             float bend = t * 0.2f;
 
-            Vector3 pos = transform.position + new Vector3(waveX + bend, y, 0f);
+            Vector3 pos = localOffset + new Vector3(waveX + bend, y, 0f);
 
             line.SetPosition(i, pos);
         }
