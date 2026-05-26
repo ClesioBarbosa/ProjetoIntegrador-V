@@ -1403,7 +1403,7 @@ GameObject:
   - component: {fileID: 1748110976}
   - component: {fileID: 1748110975}
   m_Layer: 0
-  m_Name: Placeholder_Cube
+  m_Name: Placeholder_Cube_peixe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
