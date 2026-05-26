@@ -19,40 +19,39 @@ public class Script_Game_Manager_Cuidado_Com_Os_Contatos : MonoBehaviour
         Max_Timer, 
         Current_Timer;
 
-    List<string> Possible_Names = new List<string> { "Ana", "Andr�", "Amanda", "Arthur", "Alice", "Augusto", "Aline", "Adriano", "Alessandra", "Ant�nio",
-        "Bruno", "Bianca", "Beatriz", "Bernardo", "B�rbara", "Breno", "Bruna", "Ben�cio", "Bento", "Beto",
-        "Carlos", "Camila", "Caio", "Carolina", "C�sar", "Clara", "Cristiano", "C�ntia", "Cau�", "Cl�udio",
-        "Daniel", "Daniela", "Diego", "D�bora", "Davi", "Diana", "Douglas", "Denise", "Dalton", "Darlan",
+    List<string> Possible_Names = new List<string> { "Ana", "Andre", "Amanda", "Arthur", "Alice", "Augusto", "Aline", "Adriano", "Alessandra", "Antonio",
+        "Bruno", "Bianca", "Beatriz", "Bernardo", "Barbara", "Breno", "Bruna", "Benicio", "Bento", "Beto",
+        "Carlos", "Camila", "Caio", "Carolina", "Cesar", "Clara", "Cristiano", "Cintia", "Caue", "Claudio",
+        "Daniel", "Daniela", "Diego", "Debora", "Davi", "Diana", "Douglas", "Denise", "Dalton", "Darlan",
         "Eduardo", "Erika", "Elias", "Elaine", "Enzo", "Ester", "Everton", "Eliane", "Emanoel", "Ellen",
-        "Felipe", "Fernanda", "F�bio", "Fl�via", "Francisco", "Fabiana", "Fernando", "F�tima", "Frederico", "Filipe",
-        "Gabriel", "Gabriela", "Gustavo", "Giovana", "Guilherme", "Gisele", "Geraldo", "Gl�ria", "Geovane", "Gilberto",
-        "Henrique", "Helena", "Hugo", "Helo�sa", "Heitor", "Hadassa", "Higor", "Hilda", "Herbert", "H�lio",
-        "Igor", "Isabela", "Ivan", "Ingrid", "�caro", "Iara", "Isaque", "Ivone", "Israel", "Irineu",
-        "Jo�o", "Juliana", "Jos�", "J�lia", "Jefferson", "J�ssica", "Jonas", "Jana�na", "Joaquim", "J�nior",
-        "Kaio", "Karina", "Kelvin", "Kelly", "Kau�", "K�tia", "Kleber", "Kiara", "Kawan", "Karen",
-        "Lucas", "Larissa", "Leonardo", "Luana", "Luiz", "Let�cia", "Leandro", "L�via", "Lorenzo", "L�cio",
-        "Marcos", "Maria", "Mateus", "Mariana", "Miguel", "M�rcia", "Murilo", "Mirela", "Marcelo", "Milena",
-        "Nicolas", "Nat�lia", "Nelson", "Nicole", "Nathan", "Nayara", "Nataniel", "Neide", "Nivaldo", "Noemi",
-        "Ot�vio", "Olivia", "Osvaldo", "Ol�via", "Orlando", "Odete", "Othon", "Olga", "Omar", "Of�lia",
-        "Paulo", "Patricia", "Pedro", "Priscila", "Pablo", "Pamela", "Pietro", "Paloma", "Patrick", "Pen�lope",
-        "Quirino", "Queila", "Qu�sia", "Quirina", "Quincas", "Quelen", "Qu�sia", "Quirineu", "Quit�ria", "Quiana",
+        "Felipe", "Fernanda", "Fabio", "Flavia", "Francisco", "Fabiana", "Fernando", "Fatima", "Frederico", "Filipe",
+        "Gabriel", "Gabriela", "Gustavo", "Giovana", "Guilherme", "Gisele", "Geraldo", "Gloria", "Geovane", "Gilberto",
+        "Henrique", "Helena", "Hugo", "Heloisa", "Heitor", "Hadassa", "Higor", "Hilda", "Herbert", "Helio",
+        "Igor", "Isabela", "Ivan", "Ingrid", "Icaro", "Iara", "Isaque", "Ivone", "Israel", "Irineu",
+        "Joao", "Juliana", "Jose", "Julia", "Jefferson", "Jessica", "Jonas", "Janaina", "Joaquim", "Junior",
+        "Kaio", "Karina", "Kelvin", "Kelly", "Kaua", "Katia", "Kleber", "Kiara", "Kawan", "Karen",
+        "Lucas", "Larissa", "Leonardo", "Luana", "Luiz", "Leticia", "Leandro", "Livia", "Lorenzo", "Lucio",
+        "Marcos", "Maria", "Mateus", "Mariana", "Miguel", "Marcia", "Murilo", "Mirela", "Marcelo", "Milena",
+        "Nicolas", "Natalia", "Nelson", "Nicole", "Nathan", "Nayara", "Nataniel", "Neide", "Nivaldo", "Noemi",
+        "Otavio", "Olivia", "Osvaldo", "Olivia", "Orlando", "Odete", "Othon", "Olga", "Omar", "Ofelia",
+        "Paulo", "Patricia", "Pedro", "Priscila", "Pablo", "Pamela", "Pietro", "Paloma", "Patrick", "Penelope",
+        "Quirino", "Queila", "Quesia", "Quirina", "Quincas", "Quelen", "Quesia", "Quirineu", "Quiteria", "Quiana",
         "Rafael", "Renata", "Rodrigo", "Raquel", "Ricardo", "Rita", "Ramon", "Roberta", "Ruan", "Rosana",
-        "Samuel", "Sabrina", "S�rgio", "Simone", "Sandro", "Sara", "Silas", "Sofia", "Saulo", "Sheila",
-        "Thiago", "Tatiane", "Tiago", "Tain�", "Tom�s", "Teresa", "T�lio", "Talita", "Theo", "Tereza",
+        "Samuel", "Sabrina", "Sergio", "Simone", "Sandro", "Sara", "Silas", "Sofia", "Saulo", "Sheila",
+        "Thiago", "Tatiane", "Tiago", "Taina", "Tomas", "Teresa", "Tulio", "Talita", "Theo", "Tereza",
         "Ulisses", "Ubirajara", "Ueliton", "Uilson", "Ueslei", "Uanda", "Urias", "Uelma", "Ugo", "Ualace",
-        "Victor", "Vanessa", "Vin�cius", "Vit�ria", "Valter", "V�nia", "Vitor", "Ver�nica", "Vicente", "Viviane",
+        "Victor", "Vanessa", "Vinicius", "Vitoria", "Valter", "V�nia", "Vitor", "Ver�nica", "Vicente", "Viviane",
         "William", "Wagner", "Wesley", "Wanessa", "Willian", "Wendel", "Walace", "Wilma", "Wallyson", "Washington",
         "Xavier", "Ximena", "Xande", "X�nia", "Xisto", "Xuxa", "Xadrez", "Xarleen", "Xaviera", "Ximene",
         "Yuri", "Yasmin", "Yago", "Yara", "Yan", "Yohana", "Ygor", "Yvone", "Yago", "Yandra",
-        "Z�", "Zilda", "Zacarias", "Zuleica", "Zeno", "Zara", "Zaqueu", "Zoraide", "Z�lia", "Zoran"},
+        "Ze", "Zilda", "Zacarias", "Zuleica", "Zeno", "Zara", "Zaqueu", "Zoraide", "Zelia", "Zoran"},
 
         Possible_Progressions = new List<string> { "Quantity", "Time", "Ratio", "Inconsistences" };
 
     public TextMeshProUGUI Profile_Name,
         Score_Display;
 
-    public Sprite Bubble,
-        Circ,
+    public Sprite Circ,
         Oval,
         Tri,
         Ret,
@@ -141,6 +140,8 @@ public class Script_Game_Manager_Cuidado_Com_Os_Contatos : MonoBehaviour
 
     public void Touching_System()
     {
+        Vector2 touchStart, touchEnd;
+
 
     }
 

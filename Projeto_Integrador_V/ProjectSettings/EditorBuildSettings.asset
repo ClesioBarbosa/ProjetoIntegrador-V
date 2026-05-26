@@ -32,5 +32,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Menus/MenuMiniGames.unity
     guid: 25886177d2b376242bd5523f2f0e2684
   m_configObjects:
+    com.unity.adaptiveperformance.loader_settings: {fileID: 11400000, guid: 84dc87dfeeb368a438a44b5d02676f8b,
+      type: 2}
     com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000,
       guid: 40eb02532401ad545a89b53cd6f2a832, type: 2}
