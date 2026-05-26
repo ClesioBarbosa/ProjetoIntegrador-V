@@ -8,7 +8,9 @@ public class Script_Game_Manager_Cuidado_Com_Os_Contatos : MonoBehaviour
 {
     bool Correct,
         First_Profile,
-        Is_On_Round;
+        Is_On_Round,
+        Name_Changed,
+        Picture_Changed;
 
     int Max_Messages,
         Messages, 
@@ -18,6 +20,8 @@ public class Script_Game_Manager_Cuidado_Com_Os_Contatos : MonoBehaviour
     float Sending_Ratio, 
         Max_Timer, 
         Current_Timer;
+
+    Color c;
 
     List<string> Possible_Names = new List<string> { "Ana", "Andre", "Amanda", "Arthur", "Alice", "Augusto", "Aline", "Adriano", "Alessandra", "Antonio",
         "Bruno", "Bianca", "Beatriz", "Bernardo", "Barbara", "Breno", "Bruna", "Benicio", "Bento", "Beto",
@@ -46,7 +50,10 @@ public class Script_Game_Manager_Cuidado_Com_Os_Contatos : MonoBehaviour
         "Yuri", "Yasmin", "Yago", "Yara", "Yan", "Yohana", "Ygor", "Yvone", "Yago", "Yandra",
         "Ze", "Zilda", "Zacarias", "Zuleica", "Zeno", "Zara", "Zaqueu", "Zoraide", "Zelia", "Zoran"},
 
-        Possible_Progressions = new List<string> { "Quantity", "Time", "Ratio", "Inconsistences" };
+        Possible_Progressions = new List<string> { "Quantity", "Time", "Ratio", "Inconsistences" },
+        Possible_Contacts = new List<string> { "Peixe1", "Peixe2", "Peixe3", "Peixe4", "Peixe5", "Peixe6", "Peixe7"},
+        Possible_Figures = new List<string> { "Circ", "Oval", "Tria", "Reta", "Trap", "Losa", "Quad", "Pent", "Hexa"},
+        Messsage_Order = new List<string> { };
 
     public TextMeshProUGUI Profile_Name,
         Score_Display;
@@ -59,10 +66,23 @@ public class Script_Game_Manager_Cuidado_Com_Os_Contatos : MonoBehaviour
         Los,
         Quad,
         Pent,
-        Hex;
+        Hex,
+        Peixe1,
+        Peixe2,
+        Peixe3,
+        Peixe4,
+        Peixe5,
+        Peixe6,
+        Peixe7;
+
+    public Image Profile_Picture, 
+        Message_Display,
+        Background;
 
     public GameObject Player,
-        Hook;
+        Hook,
+        Name_Object,
+        Profile_Object;
 
     Vector3 Hook_Starting_Position, Hook_Ending_Position;
     void Start()
@@ -77,9 +97,14 @@ public class Script_Game_Manager_Cuidado_Com_Os_Contatos : MonoBehaviour
         Messages = 0;
         Sending_Ratio = 3f;
         Is_On_Round = false;
+        c = new Color(255f, 255f, 255f, 0f);
+
+        Message_Display.color = c;
 
         StartRound();
         Making_Inconsistences();
+
+        Profile_Picture.sprite = Peixe5;
     }
 
 
@@ -108,8 +133,9 @@ public class Script_Game_Manager_Cuidado_Com_Os_Contatos : MonoBehaviour
 
         Messages = 0;
         First_Profile = true;
+        Name_Changed = false; Picture_Changed = false;
 
-        Is_On_Round = true;
+        Sending_The_Message();
     }
 
     void Time_Ticking()
@@ -145,10 +171,84 @@ public class Script_Game_Manager_Cuidado_Com_Os_Contatos : MonoBehaviour
 
     }
 
-    IEnumerator Sending_Message()
+    public void Sending_The_Message()
     {
+        Messages++;
 
-        return new WaitForSecondsRealtime(Sending_Ratio);
+        // Pega uma figura aleatória
+        string Figure = Possible_Figures[Random.Range(0, Possible_Figures.Count)];
+
+        // Guarda a ordem
+        Messsage_Order.Add(Figure);
+
+        // Escolhe sprite
+        switch (Figure)
+        {
+            case "Circ":
+                Message_Display.sprite = Circ;
+                break;
+
+            case "Oval":
+                Message_Display.sprite = Oval;
+                break;
+
+            case "Tria":
+                Message_Display.sprite = Tri;
+                break;
+
+            case "Reta":
+                Message_Display.sprite = Ret;
+                break;
+
+            case "Trap":
+                Message_Display.sprite = Trap;
+                break;
+
+            case "Losa":
+                Message_Display.sprite = Los;
+                break;
+
+            case "Quad":
+                Message_Display.sprite = Quad;
+                break;
+
+            case "Pent":
+                Message_Display.sprite = Pent;
+                break;
+
+            case "Hexa":
+                Message_Display.sprite = Hex;
+                break;
+        }
+
+        StartCoroutine(Blink_Message());
+    }
+
+    IEnumerator Blink_Message()
+    {
+        Color c = Message_Display.color;
+
+        // Acende
+        c.a = 1;
+        Message_Display.color = c;
+
+        yield return new WaitForSeconds(Sending_Ratio / 2f);
+
+        // Apaga
+        c.a = 0;
+        Message_Display.color = c;
+
+        yield return new WaitForSeconds(Sending_Ratio / 2f);
+
+        // Verifica se continua
+        if (Messages < Max_Messages)
+        {
+            Sending_The_Message();
+        }
+        else
+        {
+            Is_On_Round = true;
+        }
     }
 
     IEnumerator Next_Profile()
@@ -202,10 +302,21 @@ public class Script_Game_Manager_Cuidado_Com_Os_Contatos : MonoBehaviour
 
     void Making_Inconsistences()
     {
-        for(int i = 0; i < Inconsistences; i++)
+        int chance = Random.Range(0, 2);
+        if(chance == 0)
         {
-            print(i);
+            Correct = false;
+            for (int i = 0; i < Inconsistences; i++)
+            {
+                print(i);
+            }
         }
+        else
+        {
+            Correct = true;
+            Is_On_Round = true;
+        }
+        
     }
 
     void Right_Ansher()
