@@ -8,7 +8,9 @@ public class Script_Game_Manager_Cuidado_Com_Os_Contatos : MonoBehaviour
 {
     bool Correct,
         First_Profile,
-        Is_On_Round;
+        Is_On_Round,
+        Name_Changed,
+        Picture_Changed;
 
     int Max_Messages,
         Messages, 
@@ -19,40 +21,44 @@ public class Script_Game_Manager_Cuidado_Com_Os_Contatos : MonoBehaviour
         Max_Timer, 
         Current_Timer;
 
-    List<string> Possible_Names = new List<string> { "Ana", "Andr�", "Amanda", "Arthur", "Alice", "Augusto", "Aline", "Adriano", "Alessandra", "Ant�nio",
-        "Bruno", "Bianca", "Beatriz", "Bernardo", "B�rbara", "Breno", "Bruna", "Ben�cio", "Bento", "Beto",
-        "Carlos", "Camila", "Caio", "Carolina", "C�sar", "Clara", "Cristiano", "C�ntia", "Cau�", "Cl�udio",
-        "Daniel", "Daniela", "Diego", "D�bora", "Davi", "Diana", "Douglas", "Denise", "Dalton", "Darlan",
+    Color c;
+
+    List<string> Possible_Names = new List<string> { "Ana", "Andre", "Amanda", "Arthur", "Alice", "Augusto", "Aline", "Adriano", "Alessandra", "Antonio",
+        "Bruno", "Bianca", "Beatriz", "Bernardo", "Barbara", "Breno", "Bruna", "Benicio", "Bento", "Beto",
+        "Carlos", "Camila", "Caio", "Carolina", "Cesar", "Clara", "Cristiano", "Cintia", "Caue", "Claudio",
+        "Daniel", "Daniela", "Diego", "Debora", "Davi", "Diana", "Douglas", "Denise", "Dalton", "Darlan",
         "Eduardo", "Erika", "Elias", "Elaine", "Enzo", "Ester", "Everton", "Eliane", "Emanoel", "Ellen",
-        "Felipe", "Fernanda", "F�bio", "Fl�via", "Francisco", "Fabiana", "Fernando", "F�tima", "Frederico", "Filipe",
-        "Gabriel", "Gabriela", "Gustavo", "Giovana", "Guilherme", "Gisele", "Geraldo", "Gl�ria", "Geovane", "Gilberto",
-        "Henrique", "Helena", "Hugo", "Helo�sa", "Heitor", "Hadassa", "Higor", "Hilda", "Herbert", "H�lio",
-        "Igor", "Isabela", "Ivan", "Ingrid", "�caro", "Iara", "Isaque", "Ivone", "Israel", "Irineu",
-        "Jo�o", "Juliana", "Jos�", "J�lia", "Jefferson", "J�ssica", "Jonas", "Jana�na", "Joaquim", "J�nior",
-        "Kaio", "Karina", "Kelvin", "Kelly", "Kau�", "K�tia", "Kleber", "Kiara", "Kawan", "Karen",
-        "Lucas", "Larissa", "Leonardo", "Luana", "Luiz", "Let�cia", "Leandro", "L�via", "Lorenzo", "L�cio",
-        "Marcos", "Maria", "Mateus", "Mariana", "Miguel", "M�rcia", "Murilo", "Mirela", "Marcelo", "Milena",
-        "Nicolas", "Nat�lia", "Nelson", "Nicole", "Nathan", "Nayara", "Nataniel", "Neide", "Nivaldo", "Noemi",
-        "Ot�vio", "Olivia", "Osvaldo", "Ol�via", "Orlando", "Odete", "Othon", "Olga", "Omar", "Of�lia",
-        "Paulo", "Patricia", "Pedro", "Priscila", "Pablo", "Pamela", "Pietro", "Paloma", "Patrick", "Pen�lope",
-        "Quirino", "Queila", "Qu�sia", "Quirina", "Quincas", "Quelen", "Qu�sia", "Quirineu", "Quit�ria", "Quiana",
+        "Felipe", "Fernanda", "Fabio", "Flavia", "Francisco", "Fabiana", "Fernando", "Fatima", "Frederico", "Filipe",
+        "Gabriel", "Gabriela", "Gustavo", "Giovana", "Guilherme", "Gisele", "Geraldo", "Gloria", "Geovane", "Gilberto",
+        "Henrique", "Helena", "Hugo", "Heloisa", "Heitor", "Hadassa", "Higor", "Hilda", "Herbert", "Helio",
+        "Igor", "Isabela", "Ivan", "Ingrid", "Icaro", "Iara", "Isaque", "Ivone", "Israel", "Irineu",
+        "Joao", "Juliana", "Jose", "Julia", "Jefferson", "Jessica", "Jonas", "Janaina", "Joaquim", "Junior",
+        "Kaio", "Karina", "Kelvin", "Kelly", "Kaua", "Katia", "Kleber", "Kiara", "Kawan", "Karen",
+        "Lucas", "Larissa", "Leonardo", "Luana", "Luiz", "Leticia", "Leandro", "Livia", "Lorenzo", "Lucio",
+        "Marcos", "Maria", "Mateus", "Mariana", "Miguel", "Marcia", "Murilo", "Mirela", "Marcelo", "Milena",
+        "Nicolas", "Natalia", "Nelson", "Nicole", "Nathan", "Nayara", "Nataniel", "Neide", "Nivaldo", "Noemi",
+        "Otavio", "Olivia", "Osvaldo", "Olivia", "Orlando", "Odete", "Othon", "Olga", "Omar", "Ofelia",
+        "Paulo", "Patricia", "Pedro", "Priscila", "Pablo", "Pamela", "Pietro", "Paloma", "Patrick", "Penelope",
+        "Quirino", "Queila", "Quesia", "Quirina", "Quincas", "Quelen", "Quesia", "Quirineu", "Quiteria", "Quiana",
         "Rafael", "Renata", "Rodrigo", "Raquel", "Ricardo", "Rita", "Ramon", "Roberta", "Ruan", "Rosana",
-        "Samuel", "Sabrina", "S�rgio", "Simone", "Sandro", "Sara", "Silas", "Sofia", "Saulo", "Sheila",
-        "Thiago", "Tatiane", "Tiago", "Tain�", "Tom�s", "Teresa", "T�lio", "Talita", "Theo", "Tereza",
+        "Samuel", "Sabrina", "Sergio", "Simone", "Sandro", "Sara", "Silas", "Sofia", "Saulo", "Sheila",
+        "Thiago", "Tatiane", "Tiago", "Taina", "Tomas", "Teresa", "Tulio", "Talita", "Theo", "Tereza",
         "Ulisses", "Ubirajara", "Ueliton", "Uilson", "Ueslei", "Uanda", "Urias", "Uelma", "Ugo", "Ualace",
-        "Victor", "Vanessa", "Vin�cius", "Vit�ria", "Valter", "V�nia", "Vitor", "Ver�nica", "Vicente", "Viviane",
+        "Victor", "Vanessa", "Vinicius", "Vitoria", "Valter", "V�nia", "Vitor", "Ver�nica", "Vicente", "Viviane",
         "William", "Wagner", "Wesley", "Wanessa", "Willian", "Wendel", "Walace", "Wilma", "Wallyson", "Washington",
         "Xavier", "Ximena", "Xande", "X�nia", "Xisto", "Xuxa", "Xadrez", "Xarleen", "Xaviera", "Ximene",
         "Yuri", "Yasmin", "Yago", "Yara", "Yan", "Yohana", "Ygor", "Yvone", "Yago", "Yandra",
-        "Z�", "Zilda", "Zacarias", "Zuleica", "Zeno", "Zara", "Zaqueu", "Zoraide", "Z�lia", "Zoran"},
+        "Ze", "Zilda", "Zacarias", "Zuleica", "Zeno", "Zara", "Zaqueu", "Zoraide", "Zelia", "Zoran"},
 
-        Possible_Progressions = new List<string> { "Quantity", "Time", "Ratio", "Inconsistences" };
+        Possible_Progressions = new List<string> { "Quantity", "Time", "Ratio", "Inconsistences" },
+        Possible_Contacts = new List<string> { "Peixe1", "Peixe2", "Peixe3", "Peixe4", "Peixe5", "Peixe6", "Peixe7"},
+        Possible_Figures = new List<string> { "Circ", "Oval", "Tria", "Reta", "Trap", "Losa", "Quad", "Pent", "Hexa"},
+        Messsage_Order = new List<string> { };
 
     public TextMeshProUGUI Profile_Name,
         Score_Display;
 
-    public Sprite Bubble,
-        Circ,
+    public Sprite Circ,
         Oval,
         Tri,
         Ret,
@@ -60,10 +66,23 @@ public class Script_Game_Manager_Cuidado_Com_Os_Contatos : MonoBehaviour
         Los,
         Quad,
         Pent,
-        Hex;
+        Hex,
+        Peixe1,
+        Peixe2,
+        Peixe3,
+        Peixe4,
+        Peixe5,
+        Peixe6,
+        Peixe7;
+
+    public Image Profile_Picture, 
+        Message_Display,
+        Background;
 
     public GameObject Player,
-        Hook;
+        Hook,
+        Name_Object,
+        Profile_Object;
 
     Vector3 Hook_Starting_Position, Hook_Ending_Position;
     void Start()
@@ -78,9 +97,14 @@ public class Script_Game_Manager_Cuidado_Com_Os_Contatos : MonoBehaviour
         Messages = 0;
         Sending_Ratio = 3f;
         Is_On_Round = false;
+        c = new Color(255f, 255f, 255f, 0f);
+
+        Message_Display.color = c;
 
         StartRound();
         Making_Inconsistences();
+
+        Profile_Picture.sprite = Peixe5;
     }
 
 
@@ -109,8 +133,9 @@ public class Script_Game_Manager_Cuidado_Com_Os_Contatos : MonoBehaviour
 
         Messages = 0;
         First_Profile = true;
+        Name_Changed = false; Picture_Changed = false;
 
-        Is_On_Round = true;
+        Sending_The_Message();
     }
 
     void Time_Ticking()
@@ -141,13 +166,89 @@ public class Script_Game_Manager_Cuidado_Com_Os_Contatos : MonoBehaviour
 
     public void Touching_System()
     {
+        Vector2 touchStart, touchEnd;
+
 
     }
 
-    IEnumerator Sending_Message()
+    public void Sending_The_Message()
     {
+        Messages++;
 
-        return new WaitForSecondsRealtime(Sending_Ratio);
+        // Pega uma figura aleatória
+        string Figure = Possible_Figures[Random.Range(0, Possible_Figures.Count)];
+
+        // Guarda a ordem
+        Messsage_Order.Add(Figure);
+
+        // Escolhe sprite
+        switch (Figure)
+        {
+            case "Circ":
+                Message_Display.sprite = Circ;
+                break;
+
+            case "Oval":
+                Message_Display.sprite = Oval;
+                break;
+
+            case "Tria":
+                Message_Display.sprite = Tri;
+                break;
+
+            case "Reta":
+                Message_Display.sprite = Ret;
+                break;
+
+            case "Trap":
+                Message_Display.sprite = Trap;
+                break;
+
+            case "Losa":
+                Message_Display.sprite = Los;
+                break;
+
+            case "Quad":
+                Message_Display.sprite = Quad;
+                break;
+
+            case "Pent":
+                Message_Display.sprite = Pent;
+                break;
+
+            case "Hexa":
+                Message_Display.sprite = Hex;
+                break;
+        }
+
+        StartCoroutine(Blink_Message());
+    }
+
+    IEnumerator Blink_Message()
+    {
+        Color c = Message_Display.color;
+
+        // Acende
+        c.a = 1;
+        Message_Display.color = c;
+
+        yield return new WaitForSeconds(Sending_Ratio / 2f);
+
+        // Apaga
+        c.a = 0;
+        Message_Display.color = c;
+
+        yield return new WaitForSeconds(Sending_Ratio / 2f);
+
+        // Verifica se continua
+        if (Messages < Max_Messages)
+        {
+            Sending_The_Message();
+        }
+        else
+        {
+            Is_On_Round = true;
+        }
     }
 
     IEnumerator Next_Profile()
@@ -201,10 +302,21 @@ public class Script_Game_Manager_Cuidado_Com_Os_Contatos : MonoBehaviour
 
     void Making_Inconsistences()
     {
-        for(int i = 0; i < Inconsistences; i++)
+        int chance = Random.Range(0, 2);
+        if(chance == 0)
         {
-            print(i);
+            Correct = false;
+            for (int i = 0; i < Inconsistences; i++)
+            {
+                print(i);
+            }
         }
+        else
+        {
+            Correct = true;
+            Is_On_Round = true;
+        }
+        
     }
 
     void Right_Ansher()
