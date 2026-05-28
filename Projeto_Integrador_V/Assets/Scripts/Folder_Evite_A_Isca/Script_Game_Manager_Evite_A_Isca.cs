@@ -78,7 +78,7 @@ public class Script_Game_Manager_Evite_A_Isca : MonoBehaviour
     void Start()
     {
         Player_Score = 0; 
-        Door_Amount = 5; 
+        Door_Amount = 2; 
         Deception_Level = 1;
         Max_Timer = 30f;
 
