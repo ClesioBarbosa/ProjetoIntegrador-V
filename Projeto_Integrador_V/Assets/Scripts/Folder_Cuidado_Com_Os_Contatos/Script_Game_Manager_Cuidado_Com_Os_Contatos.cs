@@ -80,7 +80,8 @@ public class Script_Game_Manager_Cuidado_Com_Os_Contatos : MonoBehaviour
 
     public Image Profile_Picture, 
         Message_Display,
-        Background;
+        Background,
+        Black_out;
 
     public GameObject Player,
         Hook,
@@ -106,6 +107,10 @@ public class Script_Game_Manager_Cuidado_Com_Os_Contatos : MonoBehaviour
         c = new Color(255f, 255f, 255f, 0f);
 
         Message_Display.color = c;
+
+        Color blackoutColor = Black_out.color;
+        blackoutColor.a = 0f;
+        Black_out.color = blackoutColor;
 
         StartRound();
 
@@ -313,6 +318,49 @@ public class Script_Game_Manager_Cuidado_Com_Os_Contatos : MonoBehaviour
             Making_Inconsistences();
         }
     }
+
+    IEnumerator Blackout_Transition()
+    {
+        Color c = Black_out.color;
+
+        // Fade IN
+        float duration = 2f;
+        float timer = 0f;
+
+        while (timer < duration)
+        {
+            timer += Time.deltaTime;
+
+            c.a = Mathf.Lerp(0f, 1f, timer / duration);
+            Black_out.color = c;
+
+            yield return null;
+        }
+
+        c.a = 1f;
+        Black_out.color = c;
+
+        // Fade OUT
+        timer = 0f;
+
+        while (timer < duration)
+        {
+            timer += Time.deltaTime;
+
+            c.a = Mathf.Lerp(1f, 0f, timer / duration);
+            Black_out.color = c;
+
+            yield return null;
+        }
+
+        c.a = 0f;
+        Black_out.color = c;
+
+        // Quando terminar o fade
+        Making_Inconsistences();
+    }
+
+
 
     IEnumerator Next_Profile()
     {
