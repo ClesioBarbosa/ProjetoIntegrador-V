@@ -98,6 +98,7 @@ public class Script_Game_Manager_Evite_A_Isca : MonoBehaviour
         Touching_Screen();
         Hiding_Screen();
 
+
         if (First_Round)
         {
 
