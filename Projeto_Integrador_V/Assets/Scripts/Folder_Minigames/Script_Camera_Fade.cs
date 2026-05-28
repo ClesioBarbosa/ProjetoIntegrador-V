@@ -68,7 +68,7 @@ public class Script_Camera_Fade : MonoBehaviour
             {
                 Black_Color.a = 1f;
                 Black_Image.color = Black_Color;
-                //SceneManager.LoadScene(Minigame_Scene);
+                SceneManager.LoadScene(Minigame_Scene);
             }
         }
     }
