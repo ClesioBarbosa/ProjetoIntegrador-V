@@ -38,7 +38,7 @@ public class NPCVisao : MonoBehaviour
                 if (hit.transform == player)
                 {
                     achou=true;
-                    Debug.Log("ACHOU");
+                    //Debug.Log("ACHOU");
                     break;
                 }
             }

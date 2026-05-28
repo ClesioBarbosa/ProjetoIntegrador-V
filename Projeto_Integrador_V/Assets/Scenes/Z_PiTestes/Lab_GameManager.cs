@@ -10,7 +10,7 @@ public class Lab_GameManager : MonoBehaviour
     [Header("Configuração timer e extras")]
     [SerializeField] private TMP_Text timeTxt;
     [SerializeField] private float timeL = 60f;
-    [SerializeField] private Image anunciosSprite;
+    [SerializeField] private Image anunciosSprite, X;
 
     [Header("Configuração anúncios certos")]
     [SerializeField] private Sprite [] anunciosSpritesCertos;
@@ -55,11 +55,13 @@ public class Lab_GameManager : MonoBehaviour
         {
             anunciosSprite.sprite=anunciosSpritesCertos[Random.Range(0,anunciosSpritesCertos.Length)];
             anunciosSprite.enabled=true;
+            X.enabled=true;
         }
         if(EsquerdaDireita==1) //Esquerda lado errado
         {
             anunciosSprite.sprite=anunciosSpritesErro[Random.Range(0,anunciosSpritesErro.Length)];
             anunciosSprite.enabled=true;
+            X.enabled=true;
         }
     }
 
@@ -80,5 +82,6 @@ public class Lab_GameManager : MonoBehaviour
     public void FecharAnuncio()
     {
         anunciosSprite.enabled=false;
+        X.enabled=false;
     }
 }
