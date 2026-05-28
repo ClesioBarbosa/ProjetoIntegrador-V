@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Script_Game_Manager_Cuidado_Com_Os_Contatos : MonoBehaviour
@@ -13,13 +14,14 @@ public class Script_Game_Manager_Cuidado_Com_Os_Contatos : MonoBehaviour
         Picture_Changed;
 
     int Max_Messages,
-        Messages, 
+        Messages,
         Score,
         Inconsistences;
 
-    float Sending_Ratio, 
-        Max_Timer, 
-        Current_Timer;
+    float Sending_Ratio,
+        Max_Timer,
+        Current_Timer, 
+        Min_Swipe_Distance = 100f;
 
     Color c;
 
@@ -51,9 +53,10 @@ public class Script_Game_Manager_Cuidado_Com_Os_Contatos : MonoBehaviour
         "Ze", "Zilda", "Zacarias", "Zuleica", "Zeno", "Zara", "Zaqueu", "Zoraide", "Zelia", "Zoran"},
 
         Possible_Progressions = new List<string> { "Quantity", "Time", "Ratio", "Inconsistences" },
-        Possible_Contacts = new List<string> { "Peixe1", "Peixe2", "Peixe3", "Peixe4", "Peixe5", "Peixe6", "Peixe7"},
-        Possible_Figures = new List<string> { "Circ", "Oval", "Tria", "Reta", "Trap", "Losa", "Quad", "Pent", "Hexa"},
-        Messsage_Order = new List<string> { };
+        Possible_Contacts = new List<string> { "Peixe1", "Peixe2", "Peixe3", "Peixe4", "Peixe5", "Peixe6", "Peixe7" },
+        Possible_Figures = new List<string> { "Circ", "Oval", "Tria", "Reta", "Trap", "Losa", "Quad", "Pent", "Hexa" },
+        Messsage_Order = new List<string> { },
+        Fake_Message_Order = new List<string> { } ;
 
     public TextMeshProUGUI Profile_Name,
         Score_Display;
@@ -85,6 +88,9 @@ public class Script_Game_Manager_Cuidado_Com_Os_Contatos : MonoBehaviour
         Profile_Object;
 
     Vector3 Hook_Starting_Position, Hook_Ending_Position;
+
+    Vector2 touchStart, touchEnd;
+
     void Start()
     {
         Hook_Starting_Position = new Vector3(Hook.transform.position.x, Hook.transform.position.y, Hook.transform.position.z);
@@ -102,7 +108,6 @@ public class Script_Game_Manager_Cuidado_Com_Os_Contatos : MonoBehaviour
         Message_Display.color = c;
 
         StartRound();
-        Making_Inconsistences();
 
         Profile_Picture.sprite = Peixe5;
     }
@@ -126,6 +131,9 @@ public class Script_Game_Manager_Cuidado_Com_Os_Contatos : MonoBehaviour
 
     public void StartRound()
     {
+        Messsage_Order.Clear();
+        Fake_Message_Order.Clear();
+
         Hook.transform.position = Hook_Starting_Position;
         Profile_Name.text = (Possible_Names[Random.Range(0, Possible_Names.Count)]).ToString();
         Score_Display.text = Score.ToString();
@@ -164,24 +172,79 @@ public class Script_Game_Manager_Cuidado_Com_Os_Contatos : MonoBehaviour
 
     }
 
-    public void Touching_System()
+    void Touching_System()
     {
-        Vector2 touchStart, touchEnd;
+
+        if (Input.touchCount > 0)
+        {
+            Touch touch = Input.GetTouch(0);
+
+            switch (touch.phase)
+            {
+                case TouchPhase.Began:
+
+                    touchStart = touch.position;
+
+                    break;
 
 
+
+                case TouchPhase.Ended:
+
+                    touchEnd = touch.position;
+
+                    float swipeDistance =
+                    touchEnd.x - touchStart.x;
+
+                    if (Mathf.Abs(swipeDistance)
+                        > Min_Swipe_Distance)
+                    {
+
+                        if (swipeDistance > 0)
+                        {
+                            if (Correct)
+                            {
+                                Right_Ansher();
+                            }
+                            else
+                            {
+                                Defeat();
+                            }
+                        }
+
+
+                        else
+                        {
+                            if (!Correct)
+                            {
+                                Right_Ansher();
+                            }
+                            else
+                            {
+                                Defeat();
+                            }
+                        }
+
+                        Is_On_Round = false;
+                    }
+
+                    break;
+            }
+        }
     }
 
     public void Sending_The_Message()
     {
+        
         Messages++;
 
-        // Pega uma figura aleatória
+
         string Figure = Possible_Figures[Random.Range(0, Possible_Figures.Count)];
 
-        // Guarda a ordem
+
         Messsage_Order.Add(Figure);
 
-        // Escolhe sprite
+
         switch (Figure)
         {
             case "Circ":
@@ -228,26 +291,26 @@ public class Script_Game_Manager_Cuidado_Com_Os_Contatos : MonoBehaviour
     {
         Color c = Message_Display.color;
 
-        // Acende
+
         c.a = 1;
         Message_Display.color = c;
 
         yield return new WaitForSeconds(Sending_Ratio / 2f);
 
-        // Apaga
+
         c.a = 0;
         Message_Display.color = c;
 
         yield return new WaitForSeconds(Sending_Ratio / 2f);
 
-        // Verifica se continua
+
         if (Messages < Max_Messages)
         {
             Sending_The_Message();
         }
         else
         {
-            Is_On_Round = true;
+            Making_Inconsistences();
         }
     }
 
@@ -303,20 +366,169 @@ public class Script_Game_Manager_Cuidado_Com_Os_Contatos : MonoBehaviour
     void Making_Inconsistences()
     {
         int chance = Random.Range(0, 2);
-        if(chance == 0)
+
+        Fake_Message_Order = new List<string>(Messsage_Order);
+
+        if (chance == 0)
         {
             Correct = false;
+
             for (int i = 0; i < Inconsistences; i++)
             {
-                print(i);
+                int type = Random.Range(0, 3);
+
+                switch (type)
+                {
+
+                    case 0:
+
+                        if (!Picture_Changed)
+                        {
+                            Picture_Changed = true;
+
+                            string current = Profile_Picture.sprite.name;
+                            string next;
+
+                            do
+                            {
+                                next = Possible_Contacts[Random.Range(0, Possible_Contacts.Count)];
+
+                            } while (next == current);
+
+
+                            switch (next)
+                            {
+                                case "Peixe1": Profile_Picture.sprite = Peixe1; break;
+                                case "Peixe2": Profile_Picture.sprite = Peixe2; break;
+                                case "Peixe3": Profile_Picture.sprite = Peixe3; break;
+                                case "Peixe4": Profile_Picture.sprite = Peixe4; break;
+                                case "Peixe5": Profile_Picture.sprite = Peixe5; break;
+                                case "Peixe6": Profile_Picture.sprite = Peixe6; break;
+                                case "Peixe7": Profile_Picture.sprite = Peixe7; break;
+                            }
+                        }
+
+                        break;
+
+
+
+                    case 1:
+
+                        if (!Name_Changed)
+                        {
+                            Name_Changed = true;
+
+                            string current = Profile_Name.text;
+                            string next;
+
+                            do
+                            {
+                                next = Possible_Names[Random.Range(0, Possible_Names.Count)];
+
+                            } while (next == current);
+
+                            Profile_Name.text = next;
+                        }
+
+                        break;
+
+
+
+                    case 2:
+
+                        if (Fake_Message_Order.Count > 0)
+                        {
+                            int position = Random.Range(0, Fake_Message_Order.Count);
+
+                            string current = Fake_Message_Order[position];
+
+                            string next;
+
+                            do
+                            {
+                                next = Possible_Figures[Random.Range(0, Possible_Figures.Count)];
+
+                            } while (next == current);
+
+                            Fake_Message_Order[position] = next;
+                        }
+
+                        break;
+                }
             }
         }
+
         else
         {
             Correct = true;
-            Is_On_Round = true;
         }
-        
+
+        Messages = 0;
+
+        StartCoroutine(Showing_Fake_Order());
+    }
+
+    IEnumerator Showing_Fake_Order()
+    {
+        for (int i = 0; i < Fake_Message_Order.Count; i++)
+        {
+            string Figure = Fake_Message_Order[i];
+
+            switch (Figure)
+            {
+                case "Circ":
+                    Message_Display.sprite = Circ;
+                    break;
+
+                case "Oval":
+                    Message_Display.sprite = Oval;
+                    break;
+
+                case "Tria":
+                    Message_Display.sprite = Tri;
+                    break;
+
+                case "Reta":
+                    Message_Display.sprite = Ret;
+                    break;
+
+                case "Trap":
+                    Message_Display.sprite = Trap;
+                    break;
+
+                case "Losa":
+                    Message_Display.sprite = Los;
+                    break;
+
+                case "Quad":
+                    Message_Display.sprite = Quad;
+                    break;
+
+                case "Pent":
+                    Message_Display.sprite = Pent;
+                    break;
+
+                case "Hexa":
+                    Message_Display.sprite = Hex;
+                    break;
+            }
+
+            Color c = Message_Display.color;
+
+
+            c.a = 1;
+            Message_Display.color = c;
+
+            yield return new WaitForSeconds(Sending_Ratio / 2f);
+
+
+            c.a = 0;
+            Message_Display.color = c;
+
+            yield return new WaitForSeconds(Sending_Ratio / 2f);
+        }
+
+        Is_On_Round = true;
     }
 
     void Right_Ansher()
@@ -337,6 +549,13 @@ public class Script_Game_Manager_Cuidado_Com_Os_Contatos : MonoBehaviour
                 case "Ratio": Increase_Ratio(); break;
                 case "Inconsistences": Lower_Inconsistences(); break;
             }
-        }        
+        }
+
+        StartRound();
+    }
+
+    void Defeat()
+    {
+        SceneManager.LoadScene("MenuMiniGames");
     }
 }
