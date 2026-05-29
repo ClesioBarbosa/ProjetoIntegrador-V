@@ -28,13 +28,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8601360953524496579}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.45462263, z: -0, w: 0.8906842}
-  m_LocalPosition: {x: 7.4300003, y: 0, z: 1.9199998}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: -54.081, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!120 &1263199342522860504
 LineRenderer:
   serializedVersion: 2
@@ -78,12 +78,12 @@ LineRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Positions:
-  - {x: 0.17000008, y: 0.51, z: -2.47}
-  - {x: 0.19969371, y: 1.0365369, z: -2.47}
-  - {x: 0.17824504, y: 1.5630739, z: -2.47}
-  - {x: 0.15192679, y: 2.089611, z: -2.47}
-  - {x: 0.18445364, y: 2.6161478, z: -2.47}
-  - {x: 0.31445783, y: 3.1426847, z: -2.47}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0.080559984, y: 0.61885285, z: 0}
+  - {x: 0.111249164, y: 1.2377057, z: 0}
+  - {x: 0.0719177, y: 1.8565587, z: 0}
+  - {x: -0.003158629, y: 2.4754114, z: 0}
+  - {x: -0.04008712, y: 3.0942643, z: 0}
   m_Parameters:
     serializedVersion: 3
     widthMultiplier: 1
@@ -91,8 +91,8 @@ LineRenderer:
       serializedVersion: 2
       m_Curve:
       - serializedVersion: 3
-        time: 0.043872833
-        value: 0.7155647
+        time: 0
+        value: 0.33353806
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -100,22 +100,13 @@ LineRenderer:
         inWeight: 0.33333334
         outWeight: 0.33333334
       - serializedVersion: 3
-        time: 0.41490224
-        value: 1
-        inSlope: 0.18578644
-        outSlope: 0.18578644
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 1
+        time: 0.6580353
         value: 0
-        inSlope: 0
-        outSlope: 0
+        inSlope: -1.4259459
+        outSlope: -1.4259459
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0
+        inWeight: 0.12334619
         outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
@@ -146,7 +137,7 @@ LineRenderer:
       atime5: 0
       atime6: 0
       atime7: 0
-      m_Mode: 0
+      m_Mode: 1
       m_ColorSpace: 0
       m_NumColorKeys: 6
       m_NumAlphaKeys: 2
@@ -158,7 +149,7 @@ LineRenderer:
     shadowBias: 0.5
     generateLightingData: 0
   m_MaskInteraction: 0
-  m_UseWorldSpace: 1
+  m_UseWorldSpace: 0
   m_Loop: 0
   m_ApplyActiveColorSpace: 0
 --- !u!114 &4362437926577130856
@@ -174,10 +165,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   segments: 6
-  height: 2.6326847
-  waveAmplitude: 0.23013139
-  waveFrequency: 3.34
-  waveSpeed: 1.7604493
+  height: 2
+  waveAmplitude: 0.2
+  waveFrequency: 1
+  waveSpeed: 2
+  growDuration: 0.5
 --- !u!23 &8625123809422925445
 MeshRenderer:
   m_ObjectHideFlags: 0
