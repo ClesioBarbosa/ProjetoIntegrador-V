@@ -745,7 +745,7 @@ Transform:
   m_GameObject: {fileID: 764812860}
   serializedVersion: 2
   m_LocalRotation: {x: 0.08623777, y: -0, z: -0, w: 0.9962746}
-  m_LocalPosition: {x: 0, y: 1.56913, z: -7.155637}
+  m_LocalPosition: {x: -1.5, y: 1.2813742, z: -2.1303408}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1366,7 +1366,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Path: {fileID: 654241963}
-  m_PathPosition: 0
+  m_PathPosition: 3.938361
   m_PositionUnits: 0
   m_PathOffset: {x: 0, y: 0, z: 0}
   m_XDamping: 0
@@ -1676,12 +1676,12 @@ PrefabInstance:
     - target: {fileID: 2075868427747326851, guid: 9995b163a053c7e438c7bd91e6068283,
         type: 3}
       propertyPath: m_Waypoints.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2075868427747326851, guid: 9995b163a053c7e438c7bd91e6068283,
         type: 3}
       propertyPath: m_Waypoints.Array.data[1].position.x
-      value: 6
+      value: -1.5
       objectReference: {fileID: 0}
     - target: {fileID: 2075868427747326851, guid: 9995b163a053c7e438c7bd91e6068283,
         type: 3}
