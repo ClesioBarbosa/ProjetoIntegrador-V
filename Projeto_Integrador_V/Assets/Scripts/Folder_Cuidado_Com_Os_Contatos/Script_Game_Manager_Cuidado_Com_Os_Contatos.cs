@@ -248,32 +248,20 @@ public class Script_Game_Manager_Cuidado_Com_Os_Contatos : MonoBehaviour
                         > Min_Swipe_Distance)
                     {
 
+                        bool playerWasCorrect;
+
                         if (swipeDistance > 0)
                         {
-                            if (Correct)
-                            {
-                                Right_Ansher();
-                            }
-                            else
-                            {
-                                Defeat();
-                            }
+                            playerWasCorrect = Correct;
                         }
-
-
                         else
                         {
-                            if (!Correct)
-                            {
-                                Right_Ansher();
-                            }
-                            else
-                            {
-                                Defeat();
-                            }
+                            playerWasCorrect = !Correct;
                         }
 
                         Is_On_Round = false;
+
+                        StartCoroutine(ProcessAnswer(playerWasCorrect));
                     }
 
                     break;
@@ -613,7 +601,48 @@ public class Script_Game_Manager_Cuidado_Com_Os_Contatos : MonoBehaviour
             yield return new WaitForSeconds(Sending_Ratio / 2f);
         }
 
-        Is_On_Round = true;
+        StartCoroutine(ShowQuestionTransition());
+    }
+
+    IEnumerator ProcessAnswer(bool playerWasCorrect)
+    {
+        Question.SetActive(false);
+
+        Loading.SetActive(true);
+
+        yield return new WaitForSeconds(Random.Range(1f, 10f));
+
+        Loading.SetActive(false);
+
+        Color c = Black_out.color;
+
+        c.a = 1f;
+
+        if (playerWasCorrect)
+        {
+            c.r = 0f;
+            c.g = 1f;
+            c.b = 0f;
+        }
+        else
+        {
+            c.r = 1f;
+            c.g = 0f;
+            c.b = 0f;
+        }
+
+        Black_out.color = c;
+
+        yield return new WaitForSeconds(2f);
+
+        if (playerWasCorrect)
+        {
+            Right_Ansher();
+        }
+        else
+        {
+            Defeat();
+        }
     }
 
     void Right_Ansher()
