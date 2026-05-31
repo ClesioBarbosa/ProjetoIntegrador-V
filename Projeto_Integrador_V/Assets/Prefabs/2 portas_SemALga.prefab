@@ -15911,7 +15911,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 5522897319442966521, guid: 392c0128956e27d419f22733a695e4d0, type: 2}
+  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -15955,9 +15955,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Sample text
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 392c0128956e27d419f22733a695e4d0, type: 2}
-  m_sharedMaterial: {fileID: 5522897319442966521, guid: 392c0128956e27d419f22733a695e4d0,
-    type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -16386,6 +16385,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: alga (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8601360953524496579, guid: 3672487f5d0bef04db1f13d12bfa2e7a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -16474,6 +16478,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: alga (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8601360953524496579, guid: 3672487f5d0bef04db1f13d12bfa2e7a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16564,6 +16573,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: alga (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 8601360953524496579, guid: 3672487f5d0bef04db1f13d12bfa2e7a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -16652,6 +16666,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: alga (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8601360953524496579, guid: 3672487f5d0bef04db1f13d12bfa2e7a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16742,6 +16761,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: alga
       objectReference: {fileID: 0}
+    - target: {fileID: 8601360953524496579, guid: 3672487f5d0bef04db1f13d12bfa2e7a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -16830,6 +16854,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: alga (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8601360953524496579, guid: 3672487f5d0bef04db1f13d12bfa2e7a,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

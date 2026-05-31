@@ -59,7 +59,8 @@ public class Script_Game_Manager_Cuidado_Com_Os_Contatos : MonoBehaviour
         Fake_Message_Order = new List<string> { } ;
 
     public TextMeshProUGUI Profile_Name,
-        Score_Display;
+        Score_Display,
+        Timer_Display;
 
     public Sprite Circ,
         Oval,
@@ -83,19 +84,19 @@ public class Script_Game_Manager_Cuidado_Com_Os_Contatos : MonoBehaviour
         Background,
         Black_out;
 
-    public GameObject Player,
-        Hook,
+    public GameObject /*Player,
+        Hook,*/
         Name_Object,
         Profile_Object;
 
-    Vector3 Hook_Starting_Position, Hook_Ending_Position;
+    //Vector3 Hook_Starting_Position, Hook_Ending_Position;
 
     Vector2 touchStart, touchEnd;
 
     void Start()
     {
-        Hook_Starting_Position = new Vector3(Hook.transform.position.x, Hook.transform.position.y, Hook.transform.position.z);
-        Hook_Ending_Position = new Vector3(Player.transform.position.x, Player.transform.position.y + 1f, Player.transform.position.z);
+        /* Hook_Starting_Position = new Vector3(Hook.transform.position.x, Hook.transform.position.y, Hook.transform.position.z);
+        Hook_Ending_Position = new Vector3(Player.transform.position.x, Player.transform.position.y + 1f, Player.transform.position.z); */
 
         Max_Timer = 30f;
         Score = 0;
@@ -129,7 +130,7 @@ public class Script_Game_Manager_Cuidado_Com_Os_Contatos : MonoBehaviour
         else
         {
             Current_Timer = Max_Timer;
-            Hook.transform.position = Hook_Starting_Position;
+            //Hook.transform.position = Hook_Starting_Position;
         }
         
     }
@@ -139,9 +140,13 @@ public class Script_Game_Manager_Cuidado_Com_Os_Contatos : MonoBehaviour
         Messsage_Order.Clear();
         Fake_Message_Order.Clear();
 
-        Hook.transform.position = Hook_Starting_Position;
+        //Hook.transform.position = Hook_Starting_Position;
         Profile_Name.text = (Possible_Names[Random.Range(0, Possible_Names.Count)]).ToString();
         Score_Display.text = Score.ToString();
+        if(Score == 0)
+        {
+            Score_Display.text = "Score";
+        }
         Current_Timer = Max_Timer;
 
         Messages = 0;
@@ -159,7 +164,7 @@ public class Script_Game_Manager_Cuidado_Com_Os_Contatos : MonoBehaviour
 
             float t = 1f - (Current_Timer / Max_Timer);
 
-            t = Mathf.Clamp01(t);
+            /*t = Mathf.Clamp01(t);
 
             t = Mathf.SmoothStep(0f, 1f, t);
 
@@ -168,13 +173,10 @@ public class Script_Game_Manager_Cuidado_Com_Os_Contatos : MonoBehaviour
             if (Current_Timer <= 0f)
             {
                 print("Perdeu");
-            }
+            }*/
+
+            Timer_Display.text = ((int)Current_Timer).ToString();
         }
-    }
-
-    public void Other_Profile()
-    {
-
     }
 
     void Touching_System()
@@ -315,7 +317,7 @@ public class Script_Game_Manager_Cuidado_Com_Os_Contatos : MonoBehaviour
         }
         else
         {
-            Making_Inconsistences();
+            StartCoroutine(Blackout_Transition());
         }
     }
 
@@ -358,14 +360,6 @@ public class Script_Game_Manager_Cuidado_Com_Os_Contatos : MonoBehaviour
 
         // Quando terminar o fade
         Making_Inconsistences();
-    }
-
-
-
-    IEnumerator Next_Profile()
-    {
-
-        return new WaitForSecondsRealtime(Sending_Ratio);
     }
 
     void Lower_Inconsistences()

@@ -181,9 +181,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Nome do Minigame
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 392c0128956e27d419f22733a695e4d0, type: 2}
-  m_sharedMaterial: {fileID: 5522897319442966521, guid: 392c0128956e27d419f22733a695e4d0,
-    type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -551,9 +550,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Regras do minigame
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 392c0128956e27d419f22733a695e4d0, type: 2}
-  m_sharedMaterial: {fileID: 5522897319442966521, guid: 392c0128956e27d419f22733a695e4d0,
-    type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1208,7 +1206,7 @@ MonoBehaviour:
   Minigame_Name: Cuidado com os Contatos
   Title_Name: Suspeite de contatos alheios!
   Explanation: "Preste aten\xE7\xE3o se a segunda conversa est\xE1 igual a primeira.
-    Arraste pra direita pra aceitar e pra esquerda pra bloquear. Suspeite sempre."
+    Arraste pra direita pra confirmar e pra esquerda pra bloquear. Suspeite sempre."
   Background_Image: {fileID: 1431701396}
   Fade: {fileID: 1019543486}
 --- !u!114 &1553825368
@@ -1393,9 +1391,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "T\xEDtulo das regras"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 392c0128956e27d419f22733a695e4d0, type: 2}
-  m_sharedMaterial: {fileID: 5522897319442966521, guid: 392c0128956e27d419f22733a695e4d0,
-    type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
