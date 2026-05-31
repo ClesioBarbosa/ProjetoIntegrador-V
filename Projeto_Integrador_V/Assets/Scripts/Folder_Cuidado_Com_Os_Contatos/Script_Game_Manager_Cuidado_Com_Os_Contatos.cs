@@ -87,7 +87,9 @@ public class Script_Game_Manager_Cuidado_Com_Os_Contatos : MonoBehaviour
     public GameObject /*Player,
         Hook,*/
         Name_Object,
-        Profile_Object;
+        Profile_Object, 
+        Question,
+        Loading;
 
     //Vector3 Hook_Starting_Position, Hook_Ending_Position;
 
@@ -113,6 +115,9 @@ public class Script_Game_Manager_Cuidado_Com_Os_Contatos : MonoBehaviour
         blackoutColor.a = 0f;
         Black_out.color = blackoutColor;
 
+        Question.SetActive(false);
+        Loading.SetActive(false);
+
         StartRound();
 
         Profile_Picture.sprite = Peixe5;
@@ -137,6 +142,17 @@ public class Script_Game_Manager_Cuidado_Com_Os_Contatos : MonoBehaviour
 
     public void StartRound()
     {
+
+        Color blackoutColor = Black_out.color;
+        blackoutColor.r = 0f;
+        blackoutColor.g = 0f;
+        blackoutColor.b = 0f;
+        blackoutColor.a = 0f;
+        Black_out.color = blackoutColor;
+
+        Question.SetActive(false);
+        Loading.SetActive(false);
+
         Messsage_Order.Clear();
         Fake_Message_Order.Clear();
 
@@ -177,6 +193,31 @@ public class Script_Game_Manager_Cuidado_Com_Os_Contatos : MonoBehaviour
 
             Timer_Display.text = ((int)Current_Timer).ToString();
         }
+    }
+
+    IEnumerator ShowQuestionTransition()
+    {
+        Color c = Black_out.color;
+
+        float duration = 1f;
+        float timer = 0f;
+
+        while (timer < duration)
+        {
+            timer += Time.deltaTime;
+
+            c.a = Mathf.Lerp(0f, 1f, timer / duration);
+            Black_out.color = c;
+
+            yield return null;
+        }
+
+        c.a = 1f;
+        Black_out.color = c;
+
+        Question.SetActive(true);
+
+        Is_On_Round = true;
     }
 
     void Touching_System()
@@ -325,8 +366,9 @@ public class Script_Game_Manager_Cuidado_Com_Os_Contatos : MonoBehaviour
     {
         Color c = Black_out.color;
 
-        // Fade IN
         float duration = 2f;
+
+        // Fade IN
         float timer = 0f;
 
         while (timer < duration)
@@ -341,6 +383,9 @@ public class Script_Game_Manager_Cuidado_Com_Os_Contatos : MonoBehaviour
 
         c.a = 1f;
         Black_out.color = c;
+
+        // AQUI acontece a troca de perfil e definição das inconsistências
+        Making_Inconsistences();
 
         // Fade OUT
         timer = 0f;
@@ -358,8 +403,8 @@ public class Script_Game_Manager_Cuidado_Com_Os_Contatos : MonoBehaviour
         c.a = 0f;
         Black_out.color = c;
 
-        // Quando terminar o fade
-        Making_Inconsistences();
+        // AQUI começa a mostrar as mensagens falsas
+        StartCoroutine(Showing_Fake_Order());
     }
 
     void Lower_Inconsistences()
@@ -506,8 +551,6 @@ public class Script_Game_Manager_Cuidado_Com_Os_Contatos : MonoBehaviour
         }
 
         Messages = 0;
-
-        StartCoroutine(Showing_Fake_Order());
     }
 
     IEnumerator Showing_Fake_Order()
