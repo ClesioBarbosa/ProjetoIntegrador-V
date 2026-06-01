@@ -328,7 +328,7 @@ Transform:
   m_GameObject: {fileID: 300995103}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.55, y: 0.090191536, z: -3.39}
+  m_LocalPosition: {x: -2.7, y: 0.090191536, z: 5.61}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -336,6 +336,7 @@ Transform:
   - {fileID: 1417029551}
   - {fileID: 826526240}
   - {fileID: 1862833981}
+  - {fileID: 412891103}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!199 &300995108
@@ -5227,6 +5228,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &412891102
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 412891103}
+  m_Layer: 0
+  m_Name: Base chapeu
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &412891103
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 412891102}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.38, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 300995107}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &577494855 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 1f2d259bd13a98e429005135b2f2fe4c,
@@ -5599,6 +5631,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Piaba
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 34e2e7d33e09eea43a063e279630bc8c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10517,6 +10554,91 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1205857266
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1205857268}
+  - component: {fileID: 1205857267}
+  m_Layer: 0
+  m_Name: CamarimManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1205857267
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1205857266}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1378f184bbe1f947ac7f478d5c7b460, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hats:
+  - hatName: mago
+    hatPrefab: {fileID: 2394234631818080585, guid: 4378d9064355c90489c7974c5d115aed,
+      type: 3}
+  - hatName: cowboy
+    hatPrefab: {fileID: 1766328905337939675, guid: a88c11813ff51a64998114844df52af8,
+      type: 3}
+  - hatName: "bon\xE9"
+    hatPrefab: {fileID: 1850179465310077079, guid: 51c0a8c62ec897f488b17eb0a23edaae,
+      type: 3}
+  - hatName: fazendeiro
+    hatPrefab: {fileID: 5220675989672985873, guid: 9409ab0b43dde7341ab35da6ab12bbbc,
+      type: 3}
+  - hatName: pirata
+    hatPrefab: {fileID: 4873191995953528528, guid: f253297b406445a4286d99e8d89ebdb5,
+      type: 3}
+  - hatName: "capit\xE3o"
+    hatPrefab: {fileID: 5768042007177523875, guid: e0db149662d236d4c960bbded77d8e35,
+      type: 3}
+  - hatName: gorro
+    hatPrefab: {fileID: 8402914600947094390, guid: de70022ee03b3014980c1c31e9f07b13,
+      type: 3}
+  - hatName: "bon\xE9 jovem"
+    hatPrefab: {fileID: 8194743398646151122, guid: 29a2cf29f6dffe44ca01ab7f26f4de0b,
+      type: 3}
+  - hatName: "bon\xE9 pop"
+    hatPrefab: {fileID: 303797690039881534, guid: bd2367340378cc143820a28d60cdf3d4,
+      type: 3}
+  - hatName: bone de abano
+    hatPrefab: {fileID: 3291526604953271316, guid: f278e402e8e2a914088e9da497fc5eb7,
+      type: 3}
+  - hatName: "chap\xE9u social"
+    hatPrefab: {fileID: 8304947881555593096, guid: f2645016ab5ddd14c9f919f4f9827bdb,
+      type: 3}
+  - hatName: agricutor
+    hatPrefab: {fileID: 5502469539290184287, guid: 213de31a9d306e746a4f44ef044db987,
+      type: 3}
+  - hatName: gorro street
+    hatPrefab: {fileID: 3976210064551800494, guid: de74b84318629ed47a6011f58b810924,
+      type: 3}
+  hatAnchor: {fileID: 412891103}
+--- !u!4 &1205857268
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1205857266}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.0602775, y: -0.37865558, z: 5.9578824}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1417029550 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 0df8427f7d19fbe4a9fe0a59eb205134,
@@ -10637,6 +10759,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Exocoetidae
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 0df8427f7d19fbe4a9fe0a59eb205134,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1546817819747385382, guid: 0df8427f7d19fbe4a9fe0a59eb205134,
         type: 3}
@@ -10767,6 +10894,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Vermelho
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 1f2d259bd13a98e429005135b2f2fe4c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -10940,6 +11072,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Piranha
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 9d2c12dca49d1994cb5cb852ce42a27e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -11108,3 +11245,4 @@ SceneRoots:
   - {fileID: 1743770676}
   - {fileID: 300995107}
   - {fileID: 975735758}
+  - {fileID: 1205857268}
