@@ -6,6 +6,8 @@ public class Script_Object_Rotate : MonoBehaviour
     private Vector3 startPos;
     float Destruction = 5f;
 
+    public bool Destroy_Prop;
+
     void Start()
     {
         startPos = this.gameObject.transform.position;
@@ -22,7 +24,7 @@ public class Script_Object_Rotate : MonoBehaviour
 
         Destruction -= Time.deltaTime;
 
-        if(Destruction < 0f)
+        if(Destruction < 0f && Destroy_Prop)
         {
             Destroy(gameObject);
         }

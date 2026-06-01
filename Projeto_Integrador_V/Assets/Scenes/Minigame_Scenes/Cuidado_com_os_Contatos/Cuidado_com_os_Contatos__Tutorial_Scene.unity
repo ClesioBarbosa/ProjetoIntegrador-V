@@ -181,9 +181,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Nome do Minigame
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 392c0128956e27d419f22733a695e4d0, type: 2}
-  m_sharedMaterial: {fileID: 5522897319442966521, guid: 392c0128956e27d419f22733a695e4d0,
-    type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -352,7 +351,7 @@ RectTransform:
   m_GameObject: {fileID: 359300879}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 18, y: 10.5, z: 1}
+  m_LocalScale: {x: 21, y: 13, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1553825366}
@@ -375,14 +374,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: b7aefda8e94631443af5a747308cd842, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -551,9 +550,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Regras do minigame
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 392c0128956e27d419f22733a695e4d0, type: 2}
-  m_sharedMaterial: {fileID: 5522897319442966521, guid: 392c0128956e27d419f22733a695e4d0,
-    type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1208,7 +1206,7 @@ MonoBehaviour:
   Minigame_Name: Cuidado com os Contatos
   Title_Name: Suspeite de contatos alheios!
   Explanation: "Preste aten\xE7\xE3o se a segunda conversa est\xE1 igual a primeira.
-    Arraste pra direita pra aceitar e pra esquerda pra bloquear. Suspeite sempre."
+    Arraste pra direita pra confirmar e pra esquerda pra bloquear. Suspeite sempre."
   Background_Image: {fileID: 1431701396}
   Fade: {fileID: 1019543486}
 --- !u!114 &1553825368
@@ -1393,9 +1391,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "T\xEDtulo das regras"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 392c0128956e27d419f22733a695e4d0, type: 2}
-  m_sharedMaterial: {fileID: 5522897319442966521, guid: 392c0128956e27d419f22733a695e4d0,
-    type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1607,7 +1604,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2135591963}
   m_Enabled: 1
-  m_VideoClip: {fileID: 32900000, guid: 69c8552f2bcbcc84aa640b3dc4fb9c2e, type: 3}
+  m_VideoClip: {fileID: 32900000, guid: 6f0b0054e41bc204aaa280cf787c5119, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 394161366}
@@ -1631,7 +1628,7 @@ VideoPlayer:
   m_ControlledAudioTrackCount: 1
   m_PlayOnAwake: 1
   m_SkipOnDrop: 1
-  m_Looping: 0
+  m_Looping: 1
   m_WaitForFirstFrame: 1
   m_FrameReadyEventEnabled: 0
   m_VideoShaders: []
@@ -1742,6 +1739,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1278651268255793798, guid: b724febefeaed0c46a699d7b986ac515,
+        type: 3}
+      propertyPath: Minigame_Scene
+      value: Scene_Cuidado_Com_Os_Contatos
       objectReference: {fileID: 0}
     - target: {fileID: 1380536820112629823, guid: b724febefeaed0c46a699d7b986ac515,
         type: 3}
