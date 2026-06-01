@@ -1740,6 +1740,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1278651268255793798, guid: b724febefeaed0c46a699d7b986ac515,
+        type: 3}
+      propertyPath: Minigame_Scene
+      value: Scene_Cuidado_Com_Os_Contatos
+      objectReference: {fileID: 0}
     - target: {fileID: 1380536820112629823, guid: b724febefeaed0c46a699d7b986ac515,
         type: 3}
       propertyPath: m_Camera

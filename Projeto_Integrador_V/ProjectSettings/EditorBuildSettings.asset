@@ -35,6 +35,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Menus/MenuMiniGames.unity
     guid: 25886177d2b376242bd5523f2f0e2684
   - enabled: 1
+    path: Assets/Scenes/Minigame_Scenes/Cuidado_com_os_Contatos/Scene_Cuidado_Com_Os_Contatos.unity
+    guid: 7d5c3c612f899964d9e9edc7c86b875b
+  - enabled: 1
     path: Assets/Scenes/Minigame_Scenes/Cuidado_com_os_Contatos/Cuidado_com_os_Contatos__Tutorial_Scene.unity
     guid: f487fea760359c64ab1c5304ca1a8a39
   m_configObjects:
