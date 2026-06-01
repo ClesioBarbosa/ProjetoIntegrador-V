@@ -1291,7 +1291,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee64ab40c9319bd419e165cff1f5c826, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cena: LabCenaTeste
+  cena: Labirinto_da_Fraude__Tutorial_Scene
 --- !u!114 &1795192105
 MonoBehaviour:
   m_ObjectHideFlags: 0
