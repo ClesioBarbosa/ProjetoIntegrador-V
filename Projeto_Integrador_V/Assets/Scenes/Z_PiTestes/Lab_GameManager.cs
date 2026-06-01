@@ -4,12 +4,14 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using UnityEngine.SceneManagement;
+using Unity.VisualScripting;
 
 public class Lab_GameManager : MonoBehaviour
 {
     [Header("Configuração timer e extras")]
     [SerializeField] private TMP_Text timeTxt;
-    [SerializeField] private float timeL = 60f;
+    private float timeInicial=90;
+    [SerializeField] private float timeL = 90f;
     [SerializeField] private Image anunciosSprite, X;
 
     [Header("Configuração anúncios certos")]
@@ -18,11 +20,25 @@ public class Lab_GameManager : MonoBehaviour
     [Header("Configuração anúncios errados")]
     [SerializeField] private Sprite [] anunciosSpritesErro;
 
-    private int EsquerdaDireita=-1;
+    [Header("Configuração dificuldade")]
+    public static int dificuldadeLab;
+    [HideInInspector] public int EsquerdaDireita=-1;
+
     void Start()
     {
+        anunciosSprite.enabled=false;
+        X.enabled=false;
+
         //Esquerda 0, Direita 1
         EsquerdaDireita = Random.Range(0,2);
+        Debug.Log(EsquerdaDireita);
+
+        if(dificuldadeLab*3 < 30)
+        {
+            timeL -= dificuldadeLab*3;
+        }
+        else timeL = 60;
+        
     }
 
     void Update()
@@ -34,8 +50,9 @@ public class Lab_GameManager : MonoBehaviour
         }
         else if (timeL <= 0)
         {
-            timeL=60;
-            SceneManager.LoadScene("MenuMiniGames");
+            timeL=90;
+            SceneManager.LoadScene("TelaResultadosSave");
+            dificuldadeLab=0;
         }
        
     }
@@ -53,15 +70,17 @@ public class Lab_GameManager : MonoBehaviour
     {
         if(EsquerdaDireita==0) //Esquerda lado certo
         {
-            anunciosSprite.sprite=anunciosSpritesCertos[Random.Range(0,anunciosSpritesCertos.Length)];
             anunciosSprite.enabled=true;
             X.enabled=true;
+            anunciosSprite.sprite=anunciosSpritesCertos[Random.Range(0,anunciosSpritesCertos.Length)];
+            
         }
         if(EsquerdaDireita==1) //Esquerda lado errado
         {
-            anunciosSprite.sprite=anunciosSpritesErro[Random.Range(0,anunciosSpritesErro.Length)];
             anunciosSprite.enabled=true;
             X.enabled=true;
+            anunciosSprite.sprite=anunciosSpritesErro[Random.Range(0,anunciosSpritesErro.Length)];
+            
         }
     }
 
