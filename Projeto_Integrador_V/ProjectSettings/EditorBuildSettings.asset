@@ -17,14 +17,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Minigame_Scenes/Labirinto_da_Fraude/Labirinto_da_Fraude__Tutorial_Scene.unity
     guid: f1c1e0811326fec4da39a9c515f90d86
-  - enabled: 0
-    path: Assets/Scenes/Minigame_Scenes/Cuidado_com_os_Contatos/Cuidado_com_os_Contatos_Tutorial_Scene
-      2.unity
-    guid: 1879724b2089f3e4abdd302654c06e1b
-  - enabled: 0
-    path: Assets/Scenes/Minigame_Scenes/Labirinto_da_Fraude/Labirinto_da_Fraude_Tutorial_Scene
-      1.unity
-    guid: c68fd67d5d74ca84980eeb8e6a10724b
   - enabled: 1
     path: Assets/Scenes/Z_PiTestes/LabCenaTeste.unity
     guid: bd3d65c560d51b6418affc33b62f238e
