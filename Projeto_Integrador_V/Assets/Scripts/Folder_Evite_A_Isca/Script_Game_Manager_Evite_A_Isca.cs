@@ -54,7 +54,8 @@ public class Script_Game_Manager_Evite_A_Isca : MonoBehaviour
 
     bool Is_On_Round, 
         First_Round,
-        Dramatic_Pause;
+        Dramatic_Pause,
+        Defeated;
 
     public bool FadeIn,
         FadeOut;
@@ -89,6 +90,7 @@ public class Script_Game_Manager_Evite_A_Isca : MonoBehaviour
         Initial_Time = 0f;
 
         Start_New_Round();
+        Defeated = false;
     }
 
     void Update()
@@ -399,7 +401,7 @@ public class Script_Game_Manager_Evite_A_Isca : MonoBehaviour
 
         Fade.Fade_Out = true;
 
-        SceneManager.LoadScene("MenuMiniGames");
+        
     }
 
     void Hiding_Screen()
@@ -439,6 +441,11 @@ public class Script_Game_Manager_Evite_A_Isca : MonoBehaviour
             {
                 BlackC.a = 0f;
                 Black_Fades.color = BlackC;
+
+                if (Defeated)
+                {
+                    SceneManager.LoadScene("MenuMiniGames");
+                }
 
                 FadeIn = false;
                 FadeOut = false;

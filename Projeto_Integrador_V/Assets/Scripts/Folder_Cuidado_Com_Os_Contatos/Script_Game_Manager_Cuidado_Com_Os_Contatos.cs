@@ -89,7 +89,9 @@ public class Script_Game_Manager_Cuidado_Com_Os_Contatos : MonoBehaviour
         Name_Object,
         Profile_Object, 
         Question,
-        Loading;
+        Loading,
+        Right,
+        Wrong;
 
     //Vector3 Hook_Starting_Position, Hook_Ending_Position;
 
@@ -152,6 +154,8 @@ public class Script_Game_Manager_Cuidado_Com_Os_Contatos : MonoBehaviour
 
         Question.SetActive(false);
         Loading.SetActive(false);
+        Right.SetActive(false);
+        Wrong.SetActive(false);
 
         Messsage_Order.Clear();
         Fake_Message_Order.Clear();
@@ -623,12 +627,14 @@ public class Script_Game_Manager_Cuidado_Com_Os_Contatos : MonoBehaviour
             c.r = 0f;
             c.g = 1f;
             c.b = 0f;
+            Right.SetActive(true);
         }
         else
         {
             c.r = 1f;
             c.g = 0f;
             c.b = 0f;
+            Wrong.SetActive(true);
         }
 
         Black_out.color = c;
