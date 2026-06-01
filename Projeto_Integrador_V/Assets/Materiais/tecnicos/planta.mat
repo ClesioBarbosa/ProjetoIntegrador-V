@@ -63,11 +63,11 @@ Material:
     m_Floats:
     - _Amplitude: 0.003
     - _BumpScale: 1
-    - _ColorBlend: 0.45
+    - _ColorBlend: 1
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _Frequency: 0
+    - _Frequency: 1
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1

@@ -61,9 +61,9 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Amplitude: 0.2
+    - _Amplitude: 0.5
     - _BumpScale: 1
-    - _ColorBlend: 1
+    - _ColorBlend: 2
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
@@ -84,6 +84,6 @@ Material:
     m_Colors:
     - _Color: {r: 0.5622641, g: 0.46007508, b: 0.10927016, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _SandColor: {r: 0.84705883, g: 0.5645206, b: 0, a: 1}
-    - _WaterColor: {r: 0.19999999, g: 0.4659411, b: 0.5019608, a: 1}
+    - _SandColor: {r: 0.554717, g: 0.40574583, b: 0.107803464, a: 1}
+    - _WaterColor: {r: 0.23832676, g: 0.62437665, b: 0.6754716, a: 1}
   m_BuildTextureStacks: []
