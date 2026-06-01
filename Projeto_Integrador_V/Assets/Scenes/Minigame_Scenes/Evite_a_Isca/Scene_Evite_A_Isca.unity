@@ -745,7 +745,7 @@ Transform:
   m_GameObject: {fileID: 764812860}
   serializedVersion: 2
   m_LocalRotation: {x: 0.08623777, y: -0, z: -0, w: 0.9962746}
-  m_LocalPosition: {x: -1.5, y: 1.2813742, z: -2.1303408}
+  m_LocalPosition: {x: 0, y: 1.56913, z: -7.155637}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -844,8 +844,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Score
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3b8b606d328fac5428b9debd74037b08, type: 2}
+  m_sharedMaterial: {fileID: -3230061762039810280, guid: 3b8b606d328fac5428b9debd74037b08,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1174,8 +1175,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Time
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3b8b606d328fac5428b9debd74037b08, type: 2}
+  m_sharedMaterial: {fileID: -3230061762039810280, guid: 3b8b606d328fac5428b9debd74037b08,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1364,7 +1366,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Path: {fileID: 654241963}
-  m_PathPosition: 3.938361
+  m_PathPosition: 0
   m_PositionUnits: 0
   m_PathOffset: {x: 0, y: 0, z: 0}
   m_XDamping: 0
@@ -1582,8 +1584,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Highscore
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3b8b606d328fac5428b9debd74037b08, type: 2}
+  m_sharedMaterial: {fileID: -3230061762039810280, guid: 3b8b606d328fac5428b9debd74037b08,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1673,7 +1676,7 @@ PrefabInstance:
     - target: {fileID: 2075868427747326851, guid: 9995b163a053c7e438c7bd91e6068283,
         type: 3}
       propertyPath: m_Waypoints.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2075868427747326851, guid: 9995b163a053c7e438c7bd91e6068283,
         type: 3}

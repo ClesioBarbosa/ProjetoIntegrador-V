@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AttackState : FSMState
 {
@@ -26,6 +27,8 @@ public class AttackState : FSMState
             player.GetComponent<LabMove>().vivo=false;
             atacou=true;
             Debug.Log("BATEU");
+            SceneManager.LoadScene("TelaResultadosSave");
+            Lab_GameManager.dificuldadeLab=0;
         }   
     }
 }

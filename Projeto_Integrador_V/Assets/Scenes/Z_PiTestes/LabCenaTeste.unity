@@ -2893,9 +2893,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 00:00
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 392c0128956e27d419f22733a695e4d0, type: 2}
-  m_sharedMaterial: {fileID: 5522897319442966521, guid: 392c0128956e27d419f22733a695e4d0,
-    type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5460,7 +5459,7 @@ GameObject:
   m_Component:
   - component: {fileID: 266306432}
   - component: {fileID: 266306431}
-  m_Layer: 4
+  m_Layer: 11
   m_Name: Saida
   m_TagString: Untagged
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
@@ -13178,7 +13177,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeTxt: {fileID: 126239122}
-  timeL: 60
+  timeL: 90
   anunciosSprite: {fileID: 2062319362}
   X: {fileID: 1761476164}
   anunciosSpritesCertos:
@@ -13187,6 +13186,7 @@ MonoBehaviour:
   anunciosSpritesErro:
   - {fileID: 21300000, guid: e82ccee44f487c442b9b2211809f2436, type: 3}
   - {fileID: 21300000, guid: 0869dbe664eb6914fbaee8ec07c39ef7, type: 3}
+  EsquerdaDireita: -1
 --- !u!4 &612842051 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2106619207147042715, guid: 99aab208b7ef6e54f95fb190cbe80735,
@@ -14604,6 +14604,40 @@ PrefabInstance:
       addedObject: {fileID: 1109322908}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 703447e9010a1844c9c64e9f8d3a78a3, type: 3}
+--- !u!1 &621380983
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 621380984}
+  m_Layer: 0
+  m_Name: Locais Spawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &621380984
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 621380983}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 18.18463, y: -26.804434, z: 37.202457}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1512302007}
+  - {fileID: 798826876}
+  - {fileID: 946449898}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &662378248
 GameObject:
   m_ObjectHideFlags: 0
@@ -17038,7 +17072,7 @@ GameObject:
   m_Component:
   - component: {fileID: 736615610}
   - component: {fileID: 736615611}
-  m_Layer: 4
+  m_Layer: 10
   m_Name: Saida (1)
   m_TagString: Untagged
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
@@ -17996,6 +18030,37 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e25e30d1740247c4e97282e51ab73260, type: 3}
+--- !u!1 &798826875
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 798826876}
+  m_Layer: 0
+  m_Name: Spawn Local (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &798826876
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 798826875}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -30, y: 28.094433, z: 29.7}
+  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 621380984}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &809685932
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21136,6 +21201,37 @@ MonoBehaviour:
   color: {r: 0.34635097, g: 0.8197178, b: 0.8867924, a: 1}
   tiling: {x: 1, y: 1}
   offset: {x: 0, y: 0}
+--- !u!1 &946449897
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 946449898}
+  m_Layer: 0
+  m_Name: Spawn Local (2)
+  m_TagString: Untagged
+  m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &946449898
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 946449897}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -30, y: 28.094433, z: -37}
+  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 621380984}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &974761602
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21213,6 +21309,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Baiacu 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c18e927954017f347be77c75491e5682,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -33029,6 +33130,37 @@ MonoBehaviour:
   color: {r: 0.34635097, g: 0.8197178, b: 0.8867924, a: 1}
   tiling: {x: 1, y: 1}
   offset: {x: 0, y: 0}
+--- !u!1 &1512302006
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1512302007}
+  m_Layer: 0
+  m_Name: Spawn Local
+  m_TagString: Untagged
+  m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1512302007
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1512302006}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -11.2, y: 28.094433, z: -18.462458}
+  m_LocalScale: {x: 3, y: 3, z: 3}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 621380984}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1533246143
 GameObject:
   m_ObjectHideFlags: 0
@@ -36972,7 +37104,7 @@ Transform:
   m_GameObject: {fileID: 1636365110}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.7, y: 3.67, z: 0.5}
+  m_LocalPosition: {x: 7.3, y: 3.67, z: -19.7}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -36990,6 +37122,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ee869d8ed69f5647a5c64eee793b320, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnlocais:
+  - {fileID: 1512302007}
+  - {fileID: 798826876}
+  - {fileID: 946449898}
   velocidade: 10
   suavidade: 5
   lab_Game: {fileID: 595401416}
@@ -39462,7 +39598,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: c18e927954017f347be77c75491e5682,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 41.6
+      value: 43.4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c18e927954017f347be77c75491e5682,
         type: 3}
@@ -39472,7 +39608,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: c18e927954017f347be77c75491e5682,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 7.7
+      value: 6.3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: c18e927954017f347be77c75491e5682,
         type: 3}
@@ -39513,6 +39649,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Baiacu 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: c18e927954017f347be77c75491e5682,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -46782,7 +46923,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2062319361
 RectTransform:
   m_ObjectHideFlags: 0
@@ -51849,6 +51990,7 @@ SceneRoots:
   - {fileID: 2096296136}
   - {fileID: 1636365115}
   - {fileID: 867863672}
+  - {fileID: 621380984}
   - {fileID: 1304028976}
   - {fileID: 822596154}
   - {fileID: 840382331}

@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class LabMove : MonoBehaviour
 {
+    [SerializeField] private Transform [] spawnlocais;
     [SerializeField] private float velocidade = 5f;
     [SerializeField] private float suavidade = 5f;
     [SerializeField] private Lab_GameManager lab_Game;
@@ -13,6 +14,11 @@ public class LabMove : MonoBehaviour
     private Vector2 move;
     sbyte cimabaixo=0;
     [HideInInspector] public bool vivo=false;
+
+    void Awake()
+    {
+        gameObject.transform.position=spawnlocais[Random.Range(0,spawnlocais.Length)].position;
+    }
 
     void Update()
     {
@@ -53,9 +59,15 @@ public class LabMove : MonoBehaviour
 
     void OnTriggerEnter(Collider col)
     {
-        if(col.gameObject.layer==4) //Saida
+        if(col.gameObject.layer==10 && lab_Game.EsquerdaDireita==0) //Saida Esquerda
         {
-            //SceneManager.LoadScene("MenuMiniGames");
+            SceneManager.LoadScene("LabCenaTeste");
+            Lab_GameManager.dificuldadeLab++;
+        }
+         if(col.gameObject.layer==11 && lab_Game.EsquerdaDireita==1) //Saida Direita
+        {
+            SceneManager.LoadScene("LabCenaTeste");
+            Lab_GameManager.dificuldadeLab++;
         }
         if(col.gameObject.layer==8) //Anuncios Esquerda
         {
@@ -66,4 +78,5 @@ public class LabMove : MonoBehaviour
             lab_Game.LadosAnunciosDireita();
         }
     }
+
 }
