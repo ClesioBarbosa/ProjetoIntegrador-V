@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/Minigame_Scenes/Evite_a_Isca/Scene_Evite_A_Isca.unity
     guid: 0e3025e9c041ad34eb97867723b1405c
   - enabled: 1
-    path: Assets/Scenes/Z_PiTestes/Labirinto_da_Fraude__Tutorial_Scene.unity
+    path: Assets/Scenes/Minigame_Scenes/Labirinto_da_Fraude/Labirinto_da_Fraude__Tutorial_Scene.unity
     guid: f1c1e0811326fec4da39a9c515f90d86
   - enabled: 0
     path: Assets/Scenes/Minigame_Scenes/Cuidado_com_os_Contatos/Cuidado_com_os_Contatos_Tutorial_Scene

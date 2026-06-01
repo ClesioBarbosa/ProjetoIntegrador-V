@@ -411,6 +411,7 @@ GameObject:
   - component: {fileID: 394161367}
   - component: {fileID: 394161366}
   - component: {fileID: 394161365}
+  - component: {fileID: 394161368}
   m_Layer: 0
   m_Name: Tutorial_Camera
   m_TagString: MainCamera
@@ -492,6 +493,30 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &394161368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 394161364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f320bf8f9e9b9b948b43de9956469666, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  caixafundo:
+  - {fileID: 526170408}
+  - {fileID: 1064710681}
+  texto:
+  - {fileID: 516492681}
+  - {fileID: 104933082}
+  - {fileID: 1855939453}
+  color:
+  - {r: 1, g: 1, b: 1, a: 1}
+  - {r: 0.6132076, g: 0.6132076, b: 0.6132076, a: 0}
+  - {r: 1, g: 0.9831489, b: 0, a: 1}
+  - {r: 0, g: 0, b: 0, a: 0.8784314}
 --- !u!1 &516492679
 GameObject:
   m_ObjectHideFlags: 0
@@ -551,8 +576,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: Regras do minigame
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3b8b606d328fac5428b9debd74037b08, type: 2}
+  m_sharedMaterial: {fileID: -3230061762039810280, guid: 3b8b606d328fac5428b9debd74037b08,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

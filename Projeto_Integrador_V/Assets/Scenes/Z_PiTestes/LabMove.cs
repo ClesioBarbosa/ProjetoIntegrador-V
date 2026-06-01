@@ -61,12 +61,12 @@ public class LabMove : MonoBehaviour
     {
         if(col.gameObject.layer==10 && lab_Game.EsquerdaDireita==0) //Saida Esquerda
         {
-            SceneManager.LoadScene("TelaResultadosSave");
+            SceneManager.LoadScene("LabCenaTeste");
             Lab_GameManager.dificuldadeLab++;
         }
          if(col.gameObject.layer==11 && lab_Game.EsquerdaDireita==1) //Saida Direita
         {
-            SceneManager.LoadScene("TelaResultadosSave");
+            SceneManager.LoadScene("LabCenaTeste");
             Lab_GameManager.dificuldadeLab++;
         }
         if(col.gameObject.layer==8) //Anuncios Esquerda
