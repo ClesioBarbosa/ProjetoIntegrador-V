@@ -1231,9 +1231,9 @@ MonoBehaviour:
   Title_Name_Text: {fileID: 1855939453}
   Explanation_Text: {fileID: 516492681}
   Minigame_Name: Labirinto da Fraude
-  Title_Name: "Role at\xE9 a sa\xEDda!"
-  Explanation: "Incline seu celular para inclinar o labirinto. Atravesse pela sa\xEDda
-    mais distante, dispense caminhos f\xE1ceis."
+  Title_Name: "Procure a sa\xEDda!"
+  Explanation: "Incline o celular e toque na tela para se movimentar. Fuja dos inimigos
+    e procure a sa\xEDda correta."
   Background_Image: {fileID: 1431701396}
   Fade: {fileID: 1019543486}
 --- !u!114 &1553825368
