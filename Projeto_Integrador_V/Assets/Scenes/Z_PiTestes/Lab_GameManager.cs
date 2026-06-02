@@ -51,7 +51,7 @@ public class Lab_GameManager : MonoBehaviour
         else if (timeL <= 0)
         {
             timeL=90;
-            SceneManager.LoadScene("TelaResultadosSave");
+            SceneManager.LoadScene("MenuMiniGames");
             dificuldadeLab=0;
         }
        

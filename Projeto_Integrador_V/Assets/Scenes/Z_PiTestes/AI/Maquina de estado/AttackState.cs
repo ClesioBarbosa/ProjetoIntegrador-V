@@ -27,7 +27,7 @@ public class AttackState : FSMState
             player.GetComponent<LabMove>().vivo=false;
             atacou=true;
             Debug.Log("BATEU");
-            SceneManager.LoadScene("TelaResultadosSave");
+            SceneManager.LoadScene("MenuMiniGames");
             Lab_GameManager.dificuldadeLab=0;
         }   
     }

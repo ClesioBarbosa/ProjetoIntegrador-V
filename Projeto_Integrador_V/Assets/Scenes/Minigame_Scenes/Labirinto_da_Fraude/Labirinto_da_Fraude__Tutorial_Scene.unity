@@ -551,7 +551,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: -59, y: 551.50903}
+  m_AnchoredPosition: {x: -52, y: 525}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &516492681
@@ -602,8 +602,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 60
-  m_fontSizeBase: 60
+  m_fontSize: 45
+  m_fontSizeBase: 45
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1231,9 +1231,11 @@ MonoBehaviour:
   Title_Name_Text: {fileID: 1855939453}
   Explanation_Text: {fileID: 516492681}
   Minigame_Name: Labirinto da Fraude
-  Title_Name: "Procure a sa\xEDda!"
-  Explanation: "Incline o celular e toque na tela para se movimentar. Fuja dos inimigos
-    e procure a sa\xEDda correta."
+  Title_Name: Cuidado com os dedos na tela!
+  Explanation: "Incline o celular para os lados e se move na esquerda e direita,
+    toque na parte superior e inferior da tela e viagem para cima e para baixo. Procure
+    a sa\xEDda correta do labirinto da compra, evite outros peixes e fique atento
+    a an\xFAncios que indicam o caminho certo e errado."
   Background_Image: {fileID: 1431701396}
   Fade: {fileID: 1019543486}
 --- !u!114 &1553825368
