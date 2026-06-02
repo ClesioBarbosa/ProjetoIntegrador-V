@@ -23,6 +23,7 @@ public class Lab_GameManager : MonoBehaviour
     [Header("Configuração dificuldade")]
     public static int dificuldadeLab;
     [HideInInspector] public int EsquerdaDireita=-1;
+    [SerializeField] private TMP_Text pontuacao;
 
     void Start()
     {
@@ -43,6 +44,7 @@ public class Lab_GameManager : MonoBehaviour
 
     void Update()
     {
+        pontuacao.text=$"{dificuldadeLab}";
         if(timeL>0)
         {
             timeL -= Time.deltaTime;

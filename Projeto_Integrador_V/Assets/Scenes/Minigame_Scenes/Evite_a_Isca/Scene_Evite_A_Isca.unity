@@ -559,6 +559,7 @@ MonoBehaviour:
   Actual_Door_Mold: {fileID: 0}
   Player: {fileID: 7684541298342680, guid: cec679e72df5d904d8b2bb4cebff6b12, type: 3}
   InitialPos: {fileID: 200737643}
+  p: {fileID: 0}
   Player_Score: 0
   Player_Highscore: 0
   Timer_Display: {fileID: 1306551035}
@@ -1615,7 +1616,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Highscore
+  m_text: "Pontua\xE7\xE3o"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3b8b606d328fac5428b9debd74037b08, type: 2}
   m_sharedMaterial: {fileID: -3230061762039810280, guid: 3b8b606d328fac5428b9debd74037b08,
@@ -1679,7 +1680,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 41.101196, y: 0, z: -13.368202, w: 0}
+  m_margin: {x: 41.101196, y: 0, z: -25.873817, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
