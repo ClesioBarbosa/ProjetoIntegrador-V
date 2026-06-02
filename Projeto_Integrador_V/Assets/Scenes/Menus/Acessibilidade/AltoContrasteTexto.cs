@@ -38,4 +38,10 @@ public class AltoContrasteTexto : MonoBehaviour
             }
         }
     }
+
+    public void AtivarAltoContraste()
+    {
+        if(alto_contrasteBool==false) {alto_contrasteBool=true; Debug.Log("AAA");}
+        else {alto_contrasteBool=false; Debug.Log("BBB");}
+    }
 }
