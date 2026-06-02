@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class Script_Game_Manager_Evite_A_Isca : MonoBehaviour
 {
@@ -11,7 +12,10 @@ public class Script_Game_Manager_Evite_A_Isca : MonoBehaviour
         Right_Domain;
 
     public GameObject Door_Prefab, 
-        Actual_Door_Mold;
+        Actual_Door_Mold,
+        Player,
+        InitialPos,
+        p;
 
     //Os nomes dos sites s�o sobrenomes de amigos do meu primeiro semestre, parceiros de equipe de projetos integradores, professores de oficina e orientadores das minhas equipes
     //Quem achar ruim � bobo
@@ -76,6 +80,8 @@ public class Script_Game_Manager_Evite_A_Isca : MonoBehaviour
 
     public TextMeshPro Right_Name_Display;
 
+    Vector3 PlayerInitialPos;
+
     void Start()
     {
         Player_Score = 0; 
@@ -89,8 +95,15 @@ public class Script_Game_Manager_Evite_A_Isca : MonoBehaviour
         First_Round = true;
         Initial_Time = 0f;
 
-        Start_New_Round();
+        
         Defeated = false;
+
+
+        PlayerInitialPos = new Vector3(InitialPos.transform.position.x,
+            InitialPos.transform.position.y,
+            InitialPos.transform.position.z);
+
+        Start_New_Round();
     }
 
     void Update()
@@ -315,6 +328,17 @@ public class Script_Game_Manager_Evite_A_Isca : MonoBehaviour
 
     void Start_New_Round()
     {
+        if (p == null)
+        {
+            p = Instantiate(Player);
+        }
+        else
+        {
+            Destroy(p);
+            p = Instantiate(Player);
+        }
+        
+        Player.transform.position = PlayerInitialPos;
         cam.Had_To_Move = false;
 
         Score_Display.text = Player_Score.ToString();
@@ -383,6 +407,7 @@ public class Script_Game_Manager_Evite_A_Isca : MonoBehaviour
                             cam.Had_To_Move = true;
 
                             Is_On_Round = false;
+                            StartCoroutine(MoverAtePosicao(new Vector3(Door_Object.transform.position.x, PlayerInitialPos.y, Door_Object.transform.position.z - 2f)));
                             StartCoroutine(Door_Object.Open_Door());
                         }
                         else
@@ -393,6 +418,26 @@ public class Script_Game_Manager_Evite_A_Isca : MonoBehaviour
                 }
             }
         }
+    }
+
+    IEnumerator MoverAtePosicao(Vector3 Pos)
+    {
+        float time = 0f;
+
+        while (time < 2f)
+        {
+            time += Time.deltaTime;
+
+            p.transform.position = Vector3.Lerp(
+                PlayerInitialPos,
+                Pos,
+                time / 2f
+            );
+
+            yield return null;
+        }
+
+        p.transform.position = Pos;
     }
 
     public void Defeat()

@@ -227,6 +227,37 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &200737643
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 200737644}
+  m_Layer: 0
+  m_Name: InitialPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &200737644
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 200737643}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.165, y: 0.12999988, z: -4.37}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &215333107
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -398,12 +429,12 @@ PrefabInstance:
     - target: {fileID: 5996028115287980639, guid: b724febefeaed0c46a699d7b986ac515,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -1231
+      value: -1242.8
       objectReference: {fileID: 0}
     - target: {fileID: 5996028115287980639, guid: b724febefeaed0c46a699d7b986ac515,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -526,6 +557,8 @@ MonoBehaviour:
   Door_Prefab: {fileID: 455247722158046030, guid: 782bc07281d57f84e9ab65cee66c0153,
     type: 3}
   Actual_Door_Mold: {fileID: 0}
+  Player: {fileID: 7684541298342680, guid: cec679e72df5d904d8b2bb4cebff6b12, type: 3}
+  InitialPos: {fileID: 200737643}
   Player_Score: 0
   Player_Highscore: 0
   Timer_Display: {fileID: 1306551035}
@@ -1767,3 +1800,4 @@ SceneRoots:
   - {fileID: 215333107}
   - {fileID: 1149948128}
   - {fileID: 554470666}
+  - {fileID: 200737644}
