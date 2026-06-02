@@ -390,14 +390,15 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: DressingRoomManager, Assembly-CSharp
-        m_MethodName: PreviousHat
-        m_Mode: 1
+      - m_Target: {fileID: 3491380795660017374, guid: b54fe50a91288bb45b0893eeda874d7f,
+          type: 3}
+        m_TargetAssemblyTypeName: PlayerCustomization, Assembly-CSharp
+        m_MethodName: MudarChapeu
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: -1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -847,14 +848,15 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: DressingRoomManager, Assembly-CSharp
-        m_MethodName: PreviousFish
-        m_Mode: 1
+      - m_Target: {fileID: 3491380795660017374, guid: b54fe50a91288bb45b0893eeda874d7f,
+          type: 3}
+        m_TargetAssemblyTypeName: PlayerCustomization, Assembly-CSharp
+        m_MethodName: MudarPersonagem
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: -1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -1274,6 +1276,93 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1102382898}
   m_CullTransparentMesh: 1
+--- !u!1001 &1172157246
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 7684541298342680, guid: b54fe50a91288bb45b0893eeda874d7f, type: 3}
+      propertyPath: m_Name
+      value: Player Prefab
+      objectReference: {fileID: 0}
+    - target: {fileID: 1303158372987296421, guid: b54fe50a91288bb45b0893eeda874d7f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3491380795660017374, guid: b54fe50a91288bb45b0893eeda874d7f,
+        type: 3}
+      propertyPath: txtNomeChapeu
+      value: 
+      objectReference: {fileID: 1764871234}
+    - target: {fileID: 3491380795660017374, guid: b54fe50a91288bb45b0893eeda874d7f,
+        type: 3}
+      propertyPath: txtNomePersonagem
+      value: 
+      objectReference: {fileID: 2037722712}
+    - target: {fileID: 4491962442435626279, guid: b54fe50a91288bb45b0893eeda874d7f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.659232
+      objectReference: {fileID: 0}
+    - target: {fileID: 4491962442435626279, guid: b54fe50a91288bb45b0893eeda874d7f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.0288007
+      objectReference: {fileID: 0}
+    - target: {fileID: 4491962442435626279, guid: b54fe50a91288bb45b0893eeda874d7f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.7716191
+      objectReference: {fileID: 0}
+    - target: {fileID: 4491962442435626279, guid: b54fe50a91288bb45b0893eeda874d7f,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.012876489
+      objectReference: {fileID: 0}
+    - target: {fileID: 4491962442435626279, guid: b54fe50a91288bb45b0893eeda874d7f,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4491962442435626279, guid: b54fe50a91288bb45b0893eeda874d7f,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.9999171
+      objectReference: {fileID: 0}
+    - target: {fileID: 4491962442435626279, guid: b54fe50a91288bb45b0893eeda874d7f,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4491962442435626279, guid: b54fe50a91288bb45b0893eeda874d7f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4491962442435626279, guid: b54fe50a91288bb45b0893eeda874d7f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -178.524
+      objectReference: {fileID: 0}
+    - target: {fileID: 4491962442435626279, guid: b54fe50a91288bb45b0893eeda874d7f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5688465309630200308, guid: b54fe50a91288bb45b0893eeda874d7f,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b54fe50a91288bb45b0893eeda874d7f, type: 3}
 --- !u!1 &1298105926
 GameObject:
   m_ObjectHideFlags: 0
@@ -1492,14 +1581,15 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: DressingRoomManager, Assembly-CSharp
-        m_MethodName: NextHat
-        m_Mode: 1
+      - m_Target: {fileID: 3491380795660017374, guid: b54fe50a91288bb45b0893eeda874d7f,
+          type: 3}
+        m_TargetAssemblyTypeName: PlayerCustomization, Assembly-CSharp
+        m_MethodName: MudarChapeu
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2059,14 +2149,15 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: DressingRoomManager, Assembly-CSharp
-        m_MethodName: NextFish
-        m_Mode: 1
+      - m_Target: {fileID: 3491380795660017374, guid: b54fe50a91288bb45b0893eeda874d7f,
+          type: 3}
+        m_TargetAssemblyTypeName: PlayerCustomization, Assembly-CSharp
+        m_MethodName: MudarPersonagem
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -2554,3 +2645,4 @@ SceneRoots:
   - {fileID: 1532696533}
   - {fileID: 1711419803}
   - {fileID: 877173379}
+  - {fileID: 1172157246}
