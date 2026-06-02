@@ -11,7 +11,8 @@ public class Script_Game_Manager_Cuidado_Com_Os_Contatos : MonoBehaviour
         First_Profile,
         Is_On_Round,
         Name_Changed,
-        Picture_Changed;
+        Picture_Changed,
+        playerWasCorrect;
 
     int Max_Messages,
         Messages,
@@ -21,7 +22,8 @@ public class Script_Game_Manager_Cuidado_Com_Os_Contatos : MonoBehaviour
     float Sending_Ratio,
         Max_Timer,
         Current_Timer, 
-        Min_Swipe_Distance = 100f;
+        Min_Swipe_Distance = 100f,
+        X_Axis_Value;
 
     Color c;
 
@@ -86,6 +88,10 @@ public class Script_Game_Manager_Cuidado_Com_Os_Contatos : MonoBehaviour
 
     public GameObject /*Player,
         Hook,*/
+        Player,
+        p,
+        InitialPos,
+        SwipePos,
         Name_Object,
         Profile_Object, 
         Question,
@@ -144,6 +150,17 @@ public class Script_Game_Manager_Cuidado_Com_Os_Contatos : MonoBehaviour
 
     public void StartRound()
     {
+        if (p == null)
+        {
+            p = Instantiate(Player);
+        }
+        else
+        {
+            Destroy(p);
+            p = Instantiate(Player);
+        }
+
+        p.transform.position = InitialPos.transform.position;
 
         Color blackoutColor = Black_out.color;
         blackoutColor.r = 0f;
@@ -199,6 +216,45 @@ public class Script_Game_Manager_Cuidado_Com_Os_Contatos : MonoBehaviour
         }
     }
 
+    IEnumerator That_Player_Animation()
+    {
+
+        float time = 0f;
+
+        while (time < 1f)
+        {
+            time += Time.deltaTime;
+
+            float t = time / 1f;
+
+            if (t < 0.5f)
+            {
+
+                p.transform.position = Vector3.Lerp(
+                    InitialPos.transform.position,
+                    SwipePos.transform.position,
+                    t * 2f
+                );
+            }
+            else
+            {
+
+                p.transform.position = Vector3.Lerp(
+                    SwipePos.transform.position,
+                    new Vector3(SwipePos.transform.position.x * X_Axis_Value, SwipePos.transform.position.y, SwipePos.transform.position.z),
+                    (t - 0.5f) * 2f
+                );
+            }
+
+            yield return null;
+        }
+
+        p.transform.position = new Vector3(SwipePos.transform.position.x * X_Axis_Value, SwipePos.transform.position.y, SwipePos.transform.position.z);
+
+
+        StartCoroutine(ProcessAnswer(playerWasCorrect));
+    }
+
     IEnumerator ShowQuestionTransition()
     {
         Color c = Black_out.color;
@@ -252,20 +308,25 @@ public class Script_Game_Manager_Cuidado_Com_Os_Contatos : MonoBehaviour
                         > Min_Swipe_Distance)
                     {
 
-                        bool playerWasCorrect;
+                        
 
                         if (swipeDistance > 0)
                         {
                             playerWasCorrect = Correct;
+
+                            X_Axis_Value = -50f;
+
                         }
                         else
                         {
                             playerWasCorrect = !Correct;
+
+                            X_Axis_Value = 50f;
                         }
 
                         Is_On_Round = false;
-
-                        StartCoroutine(ProcessAnswer(playerWasCorrect));
+                        StartCoroutine(That_Player_Animation());
+                        
                     }
 
                     break;
