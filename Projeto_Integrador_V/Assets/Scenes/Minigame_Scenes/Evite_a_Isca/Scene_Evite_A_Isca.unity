@@ -353,7 +353,7 @@ PrefabInstance:
     - target: {fileID: 1278651268255793798, guid: b724febefeaed0c46a699d7b986ac515,
         type: 3}
       propertyPath: Minigame_Scene
-      value: Evite_A_Isca_Tutorial_Scene
+      value: MenuMiniGames
       objectReference: {fileID: 0}
     - target: {fileID: 1278651268255793798, guid: b724febefeaed0c46a699d7b986ac515,
         type: 3}

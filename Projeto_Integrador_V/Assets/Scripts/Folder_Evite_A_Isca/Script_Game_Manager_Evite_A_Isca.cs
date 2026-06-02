@@ -444,6 +444,7 @@ public class Script_Game_Manager_Evite_A_Isca : MonoBehaviour
 
                 if (Defeated)
                 {
+                    print("perdeu");
                     SceneManager.LoadScene("MenuMiniGames");
                 }
 
