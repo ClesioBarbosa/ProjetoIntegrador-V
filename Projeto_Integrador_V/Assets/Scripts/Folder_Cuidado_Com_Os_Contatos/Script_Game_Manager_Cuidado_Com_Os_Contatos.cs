@@ -103,6 +103,8 @@ public class Script_Game_Manager_Cuidado_Com_Os_Contatos : MonoBehaviour
 
     Vector2 touchStart, touchEnd;
 
+    Coroutine Ending_Session;
+
     void Start()
     {
         /* Hook_Starting_Position = new Vector3(Hook.transform.position.x, Hook.transform.position.y, Hook.transform.position.z);
@@ -158,6 +160,11 @@ public class Script_Game_Manager_Cuidado_Com_Os_Contatos : MonoBehaviour
         {
             Destroy(p);
             p = Instantiate(Player);
+        }
+
+        if(Ending_Session != null)
+        {
+            Ending_Session = null;
         }
 
         p.transform.position = InitialPos.transform.position;
@@ -218,18 +225,17 @@ public class Script_Game_Manager_Cuidado_Com_Os_Contatos : MonoBehaviour
 
     IEnumerator That_Player_Animation()
     {
-
+        float duration = 3f;
         float time = 0f;
 
-        while (time < 1f)
+        while (time < duration)
         {
             time += Time.deltaTime;
 
-            float t = time / 1f;
+            float t = time / duration;
 
             if (t < 0.5f)
             {
-
                 p.transform.position = Vector3.Lerp(
                     InitialPos.transform.position,
                     SwipePos.transform.position,
@@ -238,10 +244,18 @@ public class Script_Game_Manager_Cuidado_Com_Os_Contatos : MonoBehaviour
             }
             else
             {
-
+                if(Ending_Session == null)
+                {
+                    Ending_Session = StartCoroutine(ProcessAnswer(playerWasCorrect));
+                }
+                
                 p.transform.position = Vector3.Lerp(
                     SwipePos.transform.position,
-                    new Vector3(SwipePos.transform.position.x * X_Axis_Value, SwipePos.transform.position.y, SwipePos.transform.position.z),
+                    new Vector3(
+                        SwipePos.transform.position.x * X_Axis_Value,
+                        SwipePos.transform.position.y,
+                        SwipePos.transform.position.z
+                    ),
                     (t - 0.5f) * 2f
                 );
             }
@@ -249,10 +263,13 @@ public class Script_Game_Manager_Cuidado_Com_Os_Contatos : MonoBehaviour
             yield return null;
         }
 
-        p.transform.position = new Vector3(SwipePos.transform.position.x * X_Axis_Value, SwipePos.transform.position.y, SwipePos.transform.position.z);
+        p.transform.position = new Vector3(
+            SwipePos.transform.position.x * X_Axis_Value,
+            SwipePos.transform.position.y,
+            SwipePos.transform.position.z
+        );
 
-
-        StartCoroutine(ProcessAnswer(playerWasCorrect));
+        
     }
 
     IEnumerator ShowQuestionTransition()
@@ -314,14 +331,14 @@ public class Script_Game_Manager_Cuidado_Com_Os_Contatos : MonoBehaviour
                         {
                             playerWasCorrect = Correct;
 
-                            X_Axis_Value = -50f;
+                            X_Axis_Value = -100f;
 
                         }
                         else
                         {
                             playerWasCorrect = !Correct;
 
-                            X_Axis_Value = 50f;
+                            X_Axis_Value = 100f;
                         }
 
                         Is_On_Round = false;
@@ -421,7 +438,7 @@ public class Script_Game_Manager_Cuidado_Com_Os_Contatos : MonoBehaviour
 
         float duration = 2f;
 
-        // Fade IN
+
         float timer = 0f;
 
         while (timer < duration)
@@ -437,10 +454,8 @@ public class Script_Game_Manager_Cuidado_Com_Os_Contatos : MonoBehaviour
         c.a = 1f;
         Black_out.color = c;
 
-        // AQUI acontece a troca de perfil e definição das inconsistências
         Making_Inconsistences();
 
-        // Fade OUT
         timer = 0f;
 
         while (timer < duration)
@@ -456,7 +471,6 @@ public class Script_Game_Manager_Cuidado_Com_Os_Contatos : MonoBehaviour
         c.a = 0f;
         Black_out.color = c;
 
-        // AQUI começa a mostrar as mensagens falsas
         StartCoroutine(Showing_Fake_Order());
     }
 

@@ -17,8 +17,7 @@ public class Script_Game_Manager_Evite_A_Isca : MonoBehaviour
         InitialPos,
         p;
 
-    //Os nomes dos sites s�o sobrenomes de amigos do meu primeiro semestre, parceiros de equipe de projetos integradores, professores de oficina e orientadores das minhas equipes
-    //Quem achar ruim � bobo
+
     List<string> Possible_Names = new List<string> { "Pereira", "Rozendo", "Nascimento", "Campos", "Rangel", "Santos", "Ferreira", "Lima", "Caridade", "Barreto", 
         "Oliveira", "Mota", "Mafra", "Jacinto", "Silva", "Lopes", "Desiderio", "Brito", "Braga", "Cerqueira", 
         "Sanches", "Barbosa", "Pacheco", "Freire", "Cruz", "Carmo", "Souto", "Cunha", "Andrade", 
