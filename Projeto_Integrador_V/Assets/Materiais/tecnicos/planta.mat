@@ -61,17 +61,17 @@ Material:
         m_Offset: {x: 0, y: 0}
     m_Ints: []
     m_Floats:
-    - _Amplitude: 0.003
+    - _Amplitude: 0.16
     - _BumpScale: 1
-    - _ColorBlend: 1
+    - _ColorBlend: 3.35
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _Frequency: 1
+    - _Frequency: 2.27
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
-    - _HeightInfluence: 1
+    - _HeightInfluence: 4.81
     - _Metallic: 0
     - _Mode: 0
     - _OcclusionStrength: 1
